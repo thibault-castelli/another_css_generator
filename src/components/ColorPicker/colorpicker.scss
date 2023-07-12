@@ -1,0 +1,12 @@
+@import '../../style/global.scss';
+
+.color-container {
+   display: flex;
+   align-items: center;
+
+   margin-top: 20px;
+   label {
+      font-weight: 600;
+      margin-right: 20px;
+   }
+}
