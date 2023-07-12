@@ -1,5 +1,4 @@
 import { isNumber } from '../utlis';
-import '../style/index.css';
 
 interface Props {
    minSlider: number;

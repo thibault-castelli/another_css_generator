@@ -1,5 +1,3 @@
-import '../style/index.css';
-
 interface Props {
    checkBoxValue: boolean;
    setCheckBoxValue: React.Dispatch<React.SetStateAction<boolean>>;

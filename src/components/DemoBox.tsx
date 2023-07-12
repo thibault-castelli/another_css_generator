@@ -4,7 +4,6 @@ import {
    BsFillClipboard2CheckFill,
    BsFillClipboard2Fill,
 } from 'react-icons/bs';
-import '../style/index.css';
 
 interface Props {
    cssProperty: CssProperty;
@@ -35,7 +34,7 @@ const DemoBox = ({ cssProperty, cssValue }: Props) => {
    }, [isCopied]);
 
    return (
-      <div className="demo-box-container">
+      <section className="demo-box-container">
          <div className="demo-box" style={cssObj}></div>
          <div className="copy-container">
             <p>{cssPrompt}</p>
@@ -56,7 +55,7 @@ const DemoBox = ({ cssProperty, cssValue }: Props) => {
                <span>{isCopied ? 'copied' : 'click to copy'}</span>
             </div>
          </div>
-      </div>
+      </section>
    );
 };
 

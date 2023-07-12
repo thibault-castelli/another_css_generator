@@ -1,5 +1,3 @@
-import '../style/index.css';
-
 interface Props {
    colorValue: string;
    setColorValue: React.Dispatch<React.SetStateAction<string>>;
