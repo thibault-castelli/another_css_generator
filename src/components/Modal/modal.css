@@ -33,6 +33,8 @@ h6 {
 body {
   font-size: 1.2rem;
   background-color: #cad2c5;
+  min-height: 100vh;
+  margin: 0;
 }
 body .col-2 {
   display: grid;

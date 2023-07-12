@@ -1,4 +1,4 @@
-import './colorpicker.css';
+import '../style/index.css';
 
 interface Props {
    colorValue: string;

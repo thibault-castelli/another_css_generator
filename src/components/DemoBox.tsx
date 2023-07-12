@@ -1,10 +1,10 @@
-import { CssProperty } from '../../enums';
+import { CssProperty } from '../enums';
 import { useEffect, useState } from 'react';
 import {
    BsFillClipboard2CheckFill,
    BsFillClipboard2Fill,
 } from 'react-icons/bs';
-import './demobox.css';
+import '../style/index.css';
 
 interface Props {
    cssProperty: CssProperty;

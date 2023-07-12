@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400&family=Montserrat:wght@500;600;700&display=swap");
+.container {
+  max-width: 1200px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.col-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+
+label {
+  font-weight: 600;
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  font-size: 1.2rem;
+  background-color: #cad2c5;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.demo-box-container {
+  margin-top: 20px;
+  color: #cad2c5;
+}
+.demo-box-container .demo-box {
+  width: 50%;
+  height: 50%;
+  background-color: #84a98c;
+  margin: 0 auto;
+}
+.demo-box-container .copy-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2f3e46;
+  margin: 100px auto 0 auto;
+  width: 75%;
+  border-radius: 10px;
+  padding: 5px 20px;
+  box-shadow: 3px 3px 3px 0px #333333;
+}
+.demo-box-container .copy-container p {
+  font-family: "Hind", sans-serif;
+  text-align: center;
+  margin-right: 20px;
+}
+.demo-box-container .copy-container .copy-btn-container {
+  text-align: center;
+  width: 20%;
+  cursor: pointer;
+  transition: all 0.2s;
+  opacity: 0.7;
+}
+.demo-box-container .copy-container .copy-btn-container:hover {
+  color: white;
+  opacity: 1;
+}
+.demo-box-container .copy-container .copy-btn-container button {
+  background-color: transparent;
+  border: none;
+  color: #cad2c5;
+  font-size: 2rem;
+}
+.demo-box-container .copy-container .copy-btn-container span {
+  display: block;
+  font-size: 0.8rem;
+}
+
+form .slider-container input[type=range] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  width: 100%;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #84a98c;
+  outline: none;
+  opacity: 0.7;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+form .slider-container input[type=range]:hover, form .slider-container input[type=range]:focus {
+  opacity: 1;
+  border: 1px solid #354f52;
+}
+form .slider-container input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #354f52;
+  cursor: pointer;
+}
+form .slider-container input[type=range]::-moz-range-thumb {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid #354f52;
+  cursor: pointer;
+}
+form .slider-container .label-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 20px;
+}
+form .slider-container .label-container input[type=text] {
+  border: none;
+  font-size: 1.5rem;
+  font-weight: lighter;
+  margin: 0;
+  width: 20%;
+  padding: 5px 20px;
+  text-align: right;
+  background-color: transparent;
+}
+form .slider-container .label-container input[type=text]:focus {
+  outline: none;
+}
+form .color-container {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+form .color-container label {
+  margin-right: 20px;
+}
+form .container-checkbox {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+form .container-checkbox label {
+  margin-right: 20px;
+}
+form .container-checkbox .checkbox-wrapper .tgl {
+  display: none;
+}
+form .container-checkbox .checkbox-wrapper .tgl + .tgl-btn {
+  outline: 0;
+  display: block;
+  width: 4em;
+  height: 2em;
+  position: relative;
+  cursor: pointer;
+  opacity: 0.8;
+  box-shadow: 3px 3px 3px 0px #333333;
+}
+form .container-checkbox .checkbox-wrapper .tgl + .tgl-btn:hover {
+  opacity: 1;
+}
+form .container-checkbox .checkbox-wrapper .tgl + .tgl-btn:after,
+form .container-checkbox .checkbox-wrapper .tgl + .tgl-btn:before {
+  position: relative;
+  display: block;
+  content: "";
+  width: 50%;
+  height: 100%;
+}
+form .container-checkbox .checkbox-wrapper .tgl + .tgl-btn:after {
+  left: 0;
+}
+form .container-checkbox .checkbox-wrapper .tgl + .tgl-btn:before {
+  display: none;
+}
+form .container-checkbox .checkbox-wrapper .tgl:checked + .tgl-btn:after {
+  left: 50%;
+}
+form .container-checkbox .checkbox-wrapper .tgl-skewed + .tgl-btn {
+  overflow: hidden;
+  transform: skew(-10deg);
+  backface-visibility: hidden;
+  transition: all 0.2s ease;
+  font-family: sans-serif;
+  background: #2f3e46;
+}
+form .container-checkbox .checkbox-wrapper .tgl-skewed + .tgl-btn:after,
+form .container-checkbox .checkbox-wrapper .tgl-skewed + .tgl-btn:before {
+  transform: skew(10deg);
+  display: inline-block;
+  transition: all 0.2s ease;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  line-height: 2em;
+  font-weight: bold;
+  color: #cad2c5;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+form .container-checkbox .checkbox-wrapper .tgl-skewed + .tgl-btn:after {
+  left: 100%;
+  content: attr(data-tg-on);
+  color: white;
+}
+form .container-checkbox .checkbox-wrapper .tgl-skewed + .tgl-btn:before {
+  left: 0;
+  content: attr(data-tg-off);
+}
+form .container-checkbox .checkbox-wrapper .tgl-skewed:checked + .tgl-btn {
+  background: #84a98c;
+}
+form .container-checkbox .checkbox-wrapper .tgl-skewed:checked + .tgl-btn:before {
+  left: -100%;
+}
+form .container-checkbox .checkbox-wrapper .tgl-skewed:checked + .tgl-btn:after {
+  left: 0;
+}
+
+@media screen and (max-width: 1000px) {
+  body {
+    font-size: 1.1rem;
+  }
+  .col-2 {
+    grid-template-columns: 1fr;
+  }
+  .demo-box-container {
+    margin-top: 50px;
+  }
+  .demo-box-container .demo-box {
+    height: 100%;
+  }
+  .demo-box-container .copy-container {
+    margin: 70px auto 50px auto;
+  }
+}
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 1rem;
+  }
+  .container {
+    width: 90%;
+  }
+}/*# sourceMappingURL=index.css.map */

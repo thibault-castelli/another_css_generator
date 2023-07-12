@@ -30,3 +30,25 @@ export const isNumber = (input: string): boolean => {
 
    return true;
 };
+
+export interface Rgb {
+   r: number;
+   g: number;
+   b: number;
+}
+
+export const hexToRgb = (hex: string): Rgb => {
+   let startIndex = 0;
+   let slicedHex = [];
+   if (hex[0] === '#') {
+      startIndex = 1;
+   }
+   for (let i = startIndex; i < hex.length; i += 2) {
+      slicedHex.push(hex.slice(i, i + 2));
+   }
+   return {
+      r: parseInt(slicedHex[0], 16),
+      g: parseInt(slicedHex[1], 16),
+      b: parseInt(slicedHex[2], 16),
+   };
+};

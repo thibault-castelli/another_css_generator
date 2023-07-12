@@ -1,5 +1,5 @@
-import { isNumber } from '../../utlis';
-import './slider.css';
+import { isNumber } from '../utlis';
+import '../style/index.css';
 
 interface Props {
    minSlider: number;
@@ -7,6 +7,7 @@ interface Props {
    sliderValue: string;
    setSliderValue: React.Dispatch<React.SetStateAction<string>>;
    name: string;
+   step?: string;
 }
 
 const Slider = ({
@@ -15,6 +16,7 @@ const Slider = ({
    sliderValue,
    setSliderValue,
    name,
+   step = '1',
 }: Props) => {
    const handleInputNumber = (e: React.ChangeEvent<HTMLInputElement>): void => {
       let value = e.currentTarget.value;
@@ -64,6 +66,7 @@ const Slider = ({
             min={minSlider}
             max={maxSlider}
             value={sliderValue}
+            step={step}
             onInput={(e) => {
                setSliderValue(e.currentTarget.value);
             }}
