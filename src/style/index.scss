@@ -320,6 +320,15 @@ form {
       min-height: 300px;
       background-color: $light-green;
       margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      p {
+         color: $black;
+         font-size: 3rem;
+         padding: 0 20px;
+      }
    }
    .copy-container {
       display: flex;

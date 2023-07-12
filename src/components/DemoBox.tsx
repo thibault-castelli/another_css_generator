@@ -8,9 +8,10 @@ import {
 interface Props {
    cssProperty: CssProperty;
    cssValue: string;
+   text?: string;
 }
 
-const DemoBox = ({ cssProperty, cssValue }: Props) => {
+const DemoBox = ({ cssProperty, cssValue, text = '' }: Props) => {
    const [cssObj, setCssObj] = useState({});
    const [cssPrompt, setCssPrompt] = useState<string>('');
    const [isCopied, setIsCopied] = useState<boolean>(false);
@@ -20,6 +21,11 @@ const DemoBox = ({ cssProperty, cssValue }: Props) => {
          case CssProperty.boxShadow:
             setCssObj({ boxShadow: cssValue });
             setCssPrompt('box-shadow: ' + cssValue + ';');
+            break;
+         case CssProperty.textShadow:
+            setCssObj({ textShadow: cssValue });
+            setCssPrompt('text-shadow: ' + cssValue + ';');
+            break;
       }
    }, [cssValue]);
 
@@ -35,7 +41,9 @@ const DemoBox = ({ cssProperty, cssValue }: Props) => {
 
    return (
       <section className="demo-box-container">
-         <div className="demo-box" style={cssObj}></div>
+         <div className="demo-box" style={cssObj}>
+            {text.length > 0 && <p>{text}</p>}
+         </div>
          <div className="copy-container">
             <p>{cssPrompt}</p>
             <div

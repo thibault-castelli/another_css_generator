@@ -1,4 +1,4 @@
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
    return (
@@ -13,7 +13,7 @@ const Header = () => {
                      <NavLink to="/box-shadow">box-shadow</NavLink>
                   </li>
                   <li>
-                     <NavLink to="">text-shadow</NavLink>
+                     <NavLink to="/text-shadow">text-shadow</NavLink>
                   </li>
                </ul>
             </nav>

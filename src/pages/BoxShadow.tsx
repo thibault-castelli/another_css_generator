@@ -13,17 +13,22 @@ const BoxShadow = () => {
    const [spreadRadius, setSpreadRadius] = useState<string>('5');
    const [inset, setInset] = useState<boolean>(false);
    const [color, setColor] = useState<string>('#333333');
-   const [colorAlpha, setColorAlpha] = useState<string>('0.8');
+   const [opacity, setOpacity] = useState<string>('0.8');
    const [cssValue, setCssValue] = useState<string>('10px 10px 0px 0px #333');
 
+   let colorRgb = hexToRgb(color);
+
    useEffect(() => {
-      const rgb: Rgb = hexToRgb(color);
       setCssValue(
          `${offsetX}px ${offsetY}px ${blurRadius}px ${spreadRadius}px rgba(${
-            rgb.r
-         }, ${rgb.g}, ${rgb.b}, ${colorAlpha}) ${inset ? 'inset' : ''}`
+            colorRgb.r
+         }, ${colorRgb.g}, ${colorRgb.b}, ${opacity}) ${inset ? 'inset' : ''}`
       );
-   }, [offsetX, offsetY, blurRadius, spreadRadius, inset, color, colorAlpha]);
+   }, [offsetX, offsetY, blurRadius, spreadRadius, inset, color, opacity]);
+
+   useEffect(() => {
+      colorRgb = hexToRgb(color);
+   }, [color]);
 
    return (
       <main className="container col-2">
@@ -31,7 +36,6 @@ const BoxShadow = () => {
             onSubmit={(e) => {
                e.preventDefault();
             }}
-            className="container"
          >
             <Slider
                minSlider={-50}
@@ -65,8 +69,8 @@ const BoxShadow = () => {
                minSlider={0}
                maxSlider={1}
                name="shadow-opacity"
-               sliderValue={colorAlpha}
-               setSliderValue={setColorAlpha}
+               sliderValue={opacity}
+               setSliderValue={setOpacity}
                step="0.01"
             />
             <ColorPicker
