@@ -51,6 +51,7 @@ body {
   background-color: #cad2c5;
   min-height: 100vh;
   margin: 0;
+  overflow-x: hidden;
 }
 
 header {

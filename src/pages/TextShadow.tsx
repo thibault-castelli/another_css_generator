@@ -4,6 +4,7 @@ import { CssProperty } from '../enums';
 import { useState, useEffect } from 'react';
 import { Rgb, hexToRgb } from '../utlis';
 import ColorPicker from '../components/ColorPicker';
+import { motion } from 'framer-motion';
 
 const TextShadow = () => {
    const [offsetX, setOffsetX] = useState<string>('5');
@@ -26,7 +27,16 @@ const TextShadow = () => {
    }, [color]);
 
    return (
-      <main>
+      <motion.main
+         initial={{ opacity: 0, x: -1000 }}
+         animate={{ opacity: 1, x: 0 }}
+         transition={{
+            x: { type: 'spring', stiffness: 300, damping: 30 },
+            opacity: { duration: 0.2 },
+         }}
+         exit={{ x: 1000 }}
+         key="text-shadow"
+      >
          <h2>text-shadow</h2>
          <section className="container col-2">
             <form>
@@ -71,7 +81,7 @@ const TextShadow = () => {
                text="This is the preview text."
             />
          </section>
-      </main>
+      </motion.main>
    );
 };
 

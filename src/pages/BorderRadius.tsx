@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Slider from '../components/Slider';
 import CheckBox from '../components/CheckBox';
 import DemoBox from '../components/DemoBox';
+import { motion, backOut } from 'framer-motion';
 
 const BorderRadius = () => {
    const [isDetailBorder, setIsDetailBorder] = useState<boolean>(false);
@@ -32,7 +33,14 @@ const BorderRadius = () => {
    ]);
 
    return (
-      <main>
+      <motion.main
+         initial={{ opacity: 0, x: -1000 }}
+         animate={{ opacity: 1, x: 0 }}
+         transition={{
+            x: { type: 'spring', stiffness: 300, damping: 30 },
+            opacity: { duration: 0.2 },
+         }}
+      >
          <h2>border-radius</h2>
          <section className="container col-2">
             <form>
@@ -93,7 +101,7 @@ const BorderRadius = () => {
                cssValue={cssValue}
             />
          </section>
-      </main>
+      </motion.main>
    );
 };
 

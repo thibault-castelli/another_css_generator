@@ -5,6 +5,7 @@ import Slider from '../components/Slider';
 import CheckBox from '../components/CheckBox';
 import ColorPicker from '../components/ColorPicker';
 import DemoBox from '../components/DemoBox';
+import { motion } from 'framer-motion';
 
 const BoxShadow = () => {
    const [offsetX, setOffsetX] = useState<string>('5');
@@ -31,7 +32,14 @@ const BoxShadow = () => {
    }, [color]);
 
    return (
-      <main>
+      <motion.main
+         initial={{ opacity: 0, x: -1000 }}
+         animate={{ opacity: 1, x: 0 }}
+         transition={{
+            x: { type: 'spring', stiffness: 300, damping: 30 },
+            opacity: { duration: 0.2 },
+         }}
+      >
          <h2>box-shadow</h2>
          <section className="container col-2">
             <form
@@ -89,7 +97,7 @@ const BoxShadow = () => {
 
             <DemoBox cssProperty={CssProperty.boxShadow} cssValue={cssValue} />
          </section>
-      </main>
+      </motion.main>
    );
 };
 
