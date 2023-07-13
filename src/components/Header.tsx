@@ -15,6 +15,9 @@ const Header = () => {
                   <li>
                      <NavLink to="/text-shadow">text-shadow</NavLink>
                   </li>
+                  <li>
+                     <NavLink to="/border-radius">border-radius</NavLink>
+                  </li>
                </ul>
             </nav>
          </div>

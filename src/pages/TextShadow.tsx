@@ -2,7 +2,7 @@ import DemoBox from '../components/DemoBox';
 import Slider from '../components/Slider';
 import { CssProperty } from '../enums';
 import { useState, useEffect } from 'react';
-import { hexToRgb } from '../utlis';
+import { Rgb, hexToRgb } from '../utlis';
 import ColorPicker from '../components/ColorPicker';
 
 const TextShadow = () => {
@@ -13,7 +13,7 @@ const TextShadow = () => {
    const [opacity, setOpacity] = useState<string>('0.8');
    const [cssValue, setCssValue] = useState<string>('5px 5px 5px #333');
 
-   let colorRgb = hexToRgb(color);
+   let colorRgb: Rgb = hexToRgb(color);
 
    useEffect(() => {
       setCssValue(
@@ -26,48 +26,51 @@ const TextShadow = () => {
    }, [color]);
 
    return (
-      <main className="container col-2">
-         <form>
-            <Slider
-               minSlider={-50}
-               maxSlider={50}
-               name="offset-x"
-               sliderValue={offsetX}
-               setSliderValue={setOffsetX}
+      <main>
+         <h2>text-shadow</h2>
+         <section className="container col-2">
+            <form>
+               <Slider
+                  minSlider={-50}
+                  maxSlider={50}
+                  name="offset-x"
+                  sliderValue={offsetX}
+                  setSliderValue={setOffsetX}
+               />
+               <Slider
+                  minSlider={-50}
+                  maxSlider={50}
+                  name="offset-y"
+                  sliderValue={offsetY}
+                  setSliderValue={setOffsetY}
+               />
+               <Slider
+                  minSlider={0}
+                  maxSlider={30}
+                  name="blur-radius"
+                  sliderValue={blur}
+                  setSliderValue={setBlur}
+               />
+               <Slider
+                  minSlider={0}
+                  maxSlider={1}
+                  name="shadow-opacity"
+                  sliderValue={opacity}
+                  setSliderValue={setOpacity}
+                  step="0.01"
+               />
+               <ColorPicker
+                  colorValue={color}
+                  setColorValue={setColor}
+                  name="color"
+               />
+            </form>
+            <DemoBox
+               cssProperty={CssProperty.textShadow}
+               cssValue={cssValue}
+               text="This is the preview text."
             />
-            <Slider
-               minSlider={-50}
-               maxSlider={50}
-               name="offset-y"
-               sliderValue={offsetY}
-               setSliderValue={setOffsetY}
-            />
-            <Slider
-               minSlider={0}
-               maxSlider={30}
-               name="blur-radius"
-               sliderValue={blur}
-               setSliderValue={setBlur}
-            />
-            <Slider
-               minSlider={0}
-               maxSlider={1}
-               name="shadow-opacity"
-               sliderValue={opacity}
-               setSliderValue={setOpacity}
-               step="0.01"
-            />
-            <ColorPicker
-               colorValue={color}
-               setColorValue={setColor}
-               name="color"
-            />
-         </form>
-         <DemoBox
-            cssProperty={CssProperty.textShadow}
-            cssValue={cssValue}
-            text="Preview text !"
-         />
+         </section>
       </main>
    );
 };

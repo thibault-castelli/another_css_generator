@@ -3,6 +3,8 @@ import Home from './pages/Home';
 import SharedLayout from './components/SharedLayout';
 import BoxShadow from './pages/BoxShadow';
 import TextShadow from './pages/TextShadow';
+import BorderRadius from './pages/BorderRadius';
+import Error from './pages/Error';
 
 function App() {
    return (
@@ -13,6 +15,8 @@ function App() {
                   <Route index element={<Home />} />
                   <Route path="/box-shadow" element={<BoxShadow />} />
                   <Route path="/text-shadow" element={<TextShadow />} />
+                  <Route path="/border-radius" element={<BorderRadius />} />
+                  <Route path="*" element={<Error />} />
                </Route>
             </Routes>
          </BrowserRouter>

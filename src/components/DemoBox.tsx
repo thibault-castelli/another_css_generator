@@ -26,6 +26,10 @@ const DemoBox = ({ cssProperty, cssValue, text = '' }: Props) => {
             setCssObj({ textShadow: cssValue });
             setCssPrompt('text-shadow: ' + cssValue + ';');
             break;
+         case CssProperty.borderRadius:
+            setCssObj({ borderRadius: cssValue });
+            setCssPrompt('border-radius: ' + cssValue + ';');
+            break;
       }
    }, [cssValue]);
 
