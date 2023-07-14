@@ -4,6 +4,7 @@ import SharedLayout from './components/SharedLayout';
 import BoxShadow from './pages/BoxShadow';
 import TextShadow from './pages/TextShadow';
 import BorderRadius from './pages/BorderRadius';
+import Border from './pages/Border';
 import Error from './pages/Error';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
                   <Route path="/box-shadow" element={<BoxShadow />} />
                   <Route path="/text-shadow" element={<TextShadow />} />
                   <Route path="/border-radius" element={<BorderRadius />} />
+                  <Route path="/border" element={<Border />} />
                   <Route path="*" element={<Error />} />
                </Route>
             </Routes>

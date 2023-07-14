@@ -18,6 +18,9 @@ const Header = () => {
                   <li>
                      <NavLink to="/border-radius">border-radius</NavLink>
                   </li>
+                  <li>
+                     <NavLink to="/border">border</NavLink>
+                  </li>
                </ul>
             </nav>
          </div>

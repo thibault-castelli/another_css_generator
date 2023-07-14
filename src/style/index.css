@@ -45,6 +45,10 @@ label {
   font-weight: 600;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Hind", sans-serif;
   font-size: 1.2rem;
@@ -279,6 +283,30 @@ form .container-checkbox .checkbox-wrapper .tgl-skewed:checked + .tgl-btn:before
 form .container-checkbox .checkbox-wrapper .tgl-skewed:checked + .tgl-btn:after {
   left: 0;
 }
+form .select-container {
+  margin-top: 20px;
+}
+form .select-container select,
+form .select-container option {
+  font-size: 1rem;
+  font-family: inherit;
+}
+form .select-container label {
+  margin-right: 20px;
+}
+form .select-container select {
+  background-color: #2f3e46;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: #cad2c5;
+  opacity: 0.7;
+  box-shadow: 3px 3px 3px 0px #333333;
+  transition: all 0.3s ease;
+}
+form .select-container select:hover {
+  opacity: 1;
+}
 
 .demo-box-container {
   margin-top: 20px;
@@ -310,8 +338,10 @@ form .container-checkbox .checkbox-wrapper .tgl-skewed:checked + .tgl-btn:after 
   box-shadow: 3px 3px 3px 0px #333333;
 }
 .demo-box-container .copy-container p {
-  text-align: center;
   margin-right: 20px;
+}
+.demo-box-container .copy-container p span {
+  display: block;
 }
 .demo-box-container .copy-container .copy-btn-container {
   text-align: center;

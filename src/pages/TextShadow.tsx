@@ -34,8 +34,6 @@ const TextShadow = () => {
             x: { type: 'spring', stiffness: 300, damping: 30 },
             opacity: { duration: 0.2 },
          }}
-         exit={{ x: 1000 }}
-         key="text-shadow"
       >
          <h2>text-shadow</h2>
          <section className="container col-2">

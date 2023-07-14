@@ -3,16 +3,16 @@ import { useState, useEffect } from 'react';
 import Slider from '../components/Slider';
 import CheckBox from '../components/CheckBox';
 import DemoBox from '../components/DemoBox';
-import { motion, backOut } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const BorderRadius = () => {
    const [isDetailBorder, setIsDetailBorder] = useState<boolean>(false);
    const [isPercentage, setIsPercentage] = useState<boolean>(false);
-   const [topLeft, setTopLeft] = useState<string>('0');
-   const [topRight, setTopRight] = useState<string>('0');
-   const [bottomRight, setbottomRight] = useState<string>('0');
-   const [bottomLeft, setbottomLeft] = useState<string>('0');
-   const [all, setAll] = useState<string>('0');
+   const [topLeft, setTopLeft] = useState<string>('10');
+   const [topRight, setTopRight] = useState<string>('10');
+   const [bottomRight, setbottomRight] = useState<string>('10');
+   const [bottomLeft, setbottomLeft] = useState<string>('10');
+   const [all, setAll] = useState<string>('10');
    const [cssValue, setCssValue] = useState<string>('0px');
 
    useEffect(() => {
