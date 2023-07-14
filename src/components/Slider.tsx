@@ -7,6 +7,7 @@ interface Props {
    setSliderValue: React.Dispatch<React.SetStateAction<string>>;
    name: string;
    step?: string;
+   unit?: string;
 }
 
 const Slider = ({
@@ -16,6 +17,7 @@ const Slider = ({
    setSliderValue,
    name,
    step = '1',
+   unit = '',
 }: Props) => {
    const handleInputNumber = (e: React.ChangeEvent<HTMLInputElement>): void => {
       let value = e.currentTarget.value;
@@ -54,6 +56,7 @@ const Slider = ({
                   }
                }}
             />
+            <span>{unit}</span>
          </div>
          <label htmlFor={`${name}-slider`} className="visually-hidden">
             {name}

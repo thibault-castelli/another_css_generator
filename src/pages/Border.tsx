@@ -81,6 +81,7 @@ const Border = () => {
                            name="border-width-top"
                            sliderValue={borderWidthTop}
                            setSliderValue={setBorderWidthTop}
+                           unit="px"
                         />
                         <Slider
                            minSlider={0}
@@ -88,6 +89,7 @@ const Border = () => {
                            name="border-width-right"
                            sliderValue={borderWidthRight}
                            setSliderValue={setBorderWidthRight}
+                           unit="px"
                         />
                         <Slider
                            minSlider={0}
@@ -95,6 +97,7 @@ const Border = () => {
                            name="border-width-bottom"
                            sliderValue={borderWidthBottom}
                            setSliderValue={setBorderWidthBottom}
+                           unit="px"
                         />
                         <Slider
                            minSlider={0}
@@ -102,6 +105,7 @@ const Border = () => {
                            name="border-width-left"
                            sliderValue={borderWidthLeft}
                            setSliderValue={setBorderWidthLeft}
+                           unit="px"
                         />
                      </motion.div>
                   ) : (
@@ -117,6 +121,7 @@ const Border = () => {
                            sliderValue={borderWidth}
                            setSliderValue={setBorderWidth}
                            key="2"
+                           unit="px"
                         />
                      </motion.div>
                   )}

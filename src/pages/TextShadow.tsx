@@ -44,6 +44,7 @@ const TextShadow = () => {
                   name="offset-x"
                   sliderValue={offsetX}
                   setSliderValue={setOffsetX}
+                  unit="px"
                />
                <Slider
                   minSlider={-50}
@@ -51,6 +52,7 @@ const TextShadow = () => {
                   name="offset-y"
                   sliderValue={offsetY}
                   setSliderValue={setOffsetY}
+                  unit="px"
                />
                <Slider
                   minSlider={0}
@@ -58,6 +60,7 @@ const TextShadow = () => {
                   name="blur-radius"
                   sliderValue={blur}
                   setSliderValue={setBlur}
+                  unit="px"
                />
                <Slider
                   minSlider={0}

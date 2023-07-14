@@ -192,6 +192,7 @@ form {
       }
 
       .label-container {
+         position: relative;
          display: flex;
          justify-content: space-between;
          align-items: center;
@@ -210,6 +211,12 @@ form {
             &:focus {
                outline: none;
             }
+         }
+         span {
+            position: absolute;
+            right: -10px;
+            bottom: 0;
+            font-size: 0.9rem;
          }
       }
    }

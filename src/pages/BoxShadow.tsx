@@ -53,6 +53,7 @@ const BoxShadow = () => {
                   sliderValue={offsetX}
                   setSliderValue={setOffsetX}
                   name="offset-x"
+                  unit="px"
                />
                <Slider
                   minSlider={-50}
@@ -60,6 +61,7 @@ const BoxShadow = () => {
                   sliderValue={offsetY}
                   setSliderValue={setOffsetY}
                   name="offset-y"
+                  unit="px"
                />
                <Slider
                   minSlider={0}
@@ -67,6 +69,7 @@ const BoxShadow = () => {
                   sliderValue={blurRadius}
                   setSliderValue={setBlurRadius}
                   name="blur-radius"
+                  unit="px"
                />
                <Slider
                   minSlider={0}
@@ -74,6 +77,7 @@ const BoxShadow = () => {
                   sliderValue={spreadRadius}
                   setSliderValue={setSpreadRadius}
                   name="spread-radius"
+                  unit="px"
                />
                <Slider
                   minSlider={0}

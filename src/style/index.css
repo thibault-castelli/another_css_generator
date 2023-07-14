@@ -164,6 +164,7 @@ form .slider-container input[type=range]::-moz-range-thumb {
   cursor: pointer;
 }
 form .slider-container .label-container {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -181,6 +182,12 @@ form .slider-container .label-container input[type=text] {
 }
 form .slider-container .label-container input[type=text]:focus {
   outline: none;
+}
+form .slider-container .label-container span {
+  position: absolute;
+  right: -10px;
+  bottom: 0;
+  font-size: 0.9rem;
 }
 form .color-container {
   display: flex;

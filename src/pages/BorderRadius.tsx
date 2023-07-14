@@ -58,6 +58,7 @@ const BorderRadius = () => {
                            name="top-left"
                            sliderValue={topLeft}
                            setSliderValue={setTopLeft}
+                           unit={`${isPercentage ? '%' : 'px'}`}
                         />
                         <Slider
                            minSlider={0}
@@ -65,6 +66,7 @@ const BorderRadius = () => {
                            name="top-right"
                            sliderValue={topRight}
                            setSliderValue={setTopRight}
+                           unit={`${isPercentage ? '%' : 'px'}`}
                         />
                         <Slider
                            minSlider={0}
@@ -72,6 +74,7 @@ const BorderRadius = () => {
                            name="bottom-left"
                            sliderValue={bottomLeft}
                            setSliderValue={setbottomLeft}
+                           unit={`${isPercentage ? '%' : 'px'}`}
                         />
                         <Slider
                            minSlider={0}
@@ -79,6 +82,7 @@ const BorderRadius = () => {
                            name="bottom-right"
                            sliderValue={bottomRight}
                            setSliderValue={setbottomRight}
+                           unit={`${isPercentage ? '%' : 'px'}`}
                         />
                      </motion.div>
                   ) : (
@@ -94,6 +98,7 @@ const BorderRadius = () => {
                            name="all-border"
                            sliderValue={all}
                            setSliderValue={setAll}
+                           unit={`${isPercentage ? '%' : 'px'}`}
                         />
                      </motion.div>
                   )}
