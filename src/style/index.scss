@@ -151,6 +151,8 @@ form {
    background-color: $dark-green;
    color: $white;
    box-shadow: $shadow;
+   z-index: 1;
+
    input {
       color: $white;
    }
@@ -373,11 +375,19 @@ form {
    .demo-box {
       width: 70%;
       min-height: 300px;
-      background-color: $light-green;
+      // background-color: $light-green;
+
+      background: #84a98c;
+      background: radial-gradient(
+         circle farthest-corner at center center,
+         #84a98c 25%,
+         #354f52 95%
+      );
       margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: center;
+      z-index: -1;
 
       p {
          color: $black;
@@ -398,6 +408,7 @@ form {
 
       p {
          margin-right: 20px;
+         z-index: 1;
 
          span {
             display: block;

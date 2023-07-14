@@ -42,12 +42,51 @@ const DemoBox = ({ cssProperty, cssValue, text = '' }: Props) => {
                borderBottom: borders[2],
                borderLeft: borders[3],
             });
-            setCssPrompt([
-               `border-top: ${borders[0]};`,
-               `border-right: ${borders[1]};`,
-               `border-bottom: ${borders[2]};`,
-               `border-left: ${borders[3]};`,
-            ]);
+
+            // Only prompt borders with a value different than 0px
+            const bordersPrompt: string[] = [];
+            let allStartWithZero = true;
+
+            if (!borders[0].startsWith('0')) {
+               bordersPrompt.push(`border-top: ${borders[0]};`);
+               allStartWithZero = false;
+            }
+            if (!borders[1].startsWith('0')) {
+               bordersPrompt.push(`border-right: ${borders[1]};`);
+               allStartWithZero = false;
+            }
+            if (!borders[2].startsWith('0')) {
+               bordersPrompt.push(`border-bottom: ${borders[2]};`);
+               allStartWithZero = false;
+            }
+            if (!borders[3].startsWith('0')) {
+               bordersPrompt.push(`border-left: ${borders[3]};`);
+               allStartWithZero = false;
+            }
+            if (allStartWithZero) {
+               bordersPrompt.push(`border: ${borders[0]}`);
+            }
+            setCssPrompt(bordersPrompt);
+            break;
+
+         case CssProperty.transform:
+            const tranforms = cssValue.split(';');
+            setCssObj({
+               transform: `${tranforms[0]} ${tranforms[1]} ${tranforms[2]} ${tranforms[3]} ${tranforms[4]} ${tranforms[5]} ${tranforms[6]}`,
+            });
+
+            // Only add values to transform property if their value is different than zero
+            // scaleX and scaleY are always added
+            const transformPrompt: string[] = ['transform: '];
+            tranforms.forEach((transform) => {
+               const i = transform.indexOf('(') + 1;
+               if (!(transform[i] === '0') || transform.startsWith('scale')) {
+                  transformPrompt[0] += transform + ' ';
+               }
+            });
+
+            transformPrompt[0] += ';';
+            setCssPrompt(transformPrompt);
             break;
       }
    }, [cssValue]);

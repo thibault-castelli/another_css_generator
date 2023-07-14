@@ -4,4 +4,5 @@ export enum CssProperty {
    borderRadius,
    border,
    borderDetailed,
+   transform,
 }

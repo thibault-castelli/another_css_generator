@@ -6,6 +6,7 @@ import TextShadow from './pages/TextShadow';
 import BorderRadius from './pages/BorderRadius';
 import Border from './pages/Border';
 import Error from './pages/Error';
+import Transform from './pages/Transform';
 
 function App() {
    return (
@@ -18,6 +19,7 @@ function App() {
                   <Route path="/text-shadow" element={<TextShadow />} />
                   <Route path="/border-radius" element={<BorderRadius />} />
                   <Route path="/border" element={<Border />} />
+                  <Route path="/transform" element={<Transform />} />
                   <Route path="*" element={<Error />} />
                </Route>
             </Routes>

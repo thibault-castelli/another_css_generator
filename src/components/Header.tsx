@@ -21,6 +21,9 @@ const Header = () => {
                   <li>
                      <NavLink to="/border">border</NavLink>
                   </li>
+                  <li>
+                     <NavLink to="/transform">transform</NavLink>
+                  </li>
                </ul>
             </nav>
          </div>
