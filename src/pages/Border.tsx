@@ -1,7 +1,7 @@
 import DemoBox from '../components/DemoBox';
 import { CssProperty } from '../enums';
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Select from '../components/Select';
 import Slider from '../components/Slider';
 import ColorPicker from '../components/ColorPicker';
@@ -57,7 +57,7 @@ const Border = () => {
 
    return (
       <motion.main
-         initial={{ opacity: 0, x: -1000 }}
+         initial={{ opacity: 0.5, x: -1000 }}
          animate={{ opacity: 1, x: 0 }}
          transition={{
             x: { type: 'spring', stiffness: 300, damping: 30 },
@@ -67,46 +67,60 @@ const Border = () => {
          <h2>border</h2>
          <section className="container col-2">
             <form>
-               {isDetailed ? (
-                  <>
-                     <Slider
-                        minSlider={0}
-                        maxSlider={100}
-                        name="border-width-top"
-                        sliderValue={borderWidthTop}
-                        setSliderValue={setBorderWidthTop}
-                     />
-                     <Slider
-                        minSlider={0}
-                        maxSlider={100}
-                        name="border-width-right"
-                        sliderValue={borderWidthRight}
-                        setSliderValue={setBorderWidthRight}
-                     />
-                     <Slider
-                        minSlider={0}
-                        maxSlider={100}
-                        name="border-width-bottom"
-                        sliderValue={borderWidthBottom}
-                        setSliderValue={setBorderWidthBottom}
-                     />
-                     <Slider
-                        minSlider={0}
-                        maxSlider={100}
-                        name="border-width-left"
-                        sliderValue={borderWidthLeft}
-                        setSliderValue={setBorderWidthLeft}
-                     />
-                  </>
-               ) : (
-                  <Slider
-                     minSlider={0}
-                     maxSlider={100}
-                     name="border-width"
-                     sliderValue={borderWidth}
-                     setSliderValue={setBorderWidth}
-                  />
-               )}
+               <AnimatePresence>
+                  {isDetailed ? (
+                     <motion.div
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        exit={{ height: 0, opacity: 0, scale: 0 }}
+                        key="1"
+                     >
+                        <Slider
+                           minSlider={0}
+                           maxSlider={100}
+                           name="border-width-top"
+                           sliderValue={borderWidthTop}
+                           setSliderValue={setBorderWidthTop}
+                        />
+                        <Slider
+                           minSlider={0}
+                           maxSlider={100}
+                           name="border-width-right"
+                           sliderValue={borderWidthRight}
+                           setSliderValue={setBorderWidthRight}
+                        />
+                        <Slider
+                           minSlider={0}
+                           maxSlider={100}
+                           name="border-width-bottom"
+                           sliderValue={borderWidthBottom}
+                           setSliderValue={setBorderWidthBottom}
+                        />
+                        <Slider
+                           minSlider={0}
+                           maxSlider={100}
+                           name="border-width-left"
+                           sliderValue={borderWidthLeft}
+                           setSliderValue={setBorderWidthLeft}
+                        />
+                     </motion.div>
+                  ) : (
+                     <motion.div
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        exit={{ height: 0, opacity: 0, scale: 0 }}
+                     >
+                        <Slider
+                           minSlider={0}
+                           maxSlider={100}
+                           name="border-width"
+                           sliderValue={borderWidth}
+                           setSliderValue={setBorderWidth}
+                           key="2"
+                        />
+                     </motion.div>
+                  )}
+               </AnimatePresence>
 
                <CheckBox
                   checkBoxValue={isDetailed}

@@ -33,7 +33,7 @@ const BoxShadow = () => {
 
    return (
       <motion.main
-         initial={{ opacity: 0, x: -1000 }}
+         initial={{ opacity: 0.5, x: -1000 }}
          animate={{ opacity: 1, x: 0 }}
          transition={{
             x: { type: 'spring', stiffness: 300, damping: 30 },
