@@ -6,4 +6,5 @@ export enum CssProperty {
    borderDetailed,
    transform,
    color,
+   gradient,
 }

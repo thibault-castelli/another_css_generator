@@ -3,8 +3,3 @@ export interface Rgb {
    g: number;
    b: number;
 }
-
-export interface Rgba {
-   rgb: Rgb;
-   a: number;
-}

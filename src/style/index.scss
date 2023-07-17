@@ -45,6 +45,7 @@ h2 {
    text-align: center;
    color: $black;
    font-weight: 600;
+   text-transform: uppercase;
 
    + p {
       text-align: center;
@@ -378,11 +379,50 @@ form {
       margin-top: 20px;
       opacity: 0.7;
       transition: all 0.2s ease;
+      box-shadow: $shadow;
       cursor: pointer;
 
       &:hover {
          opacity: 1;
          color: white;
+      }
+   }
+
+   .btn-container {
+      button {
+         font-weight: normal;
+         font-size: 1.1rem;
+         padding: 10px;
+         background-color: $black;
+         color: $white;
+         opacity: 0.7;
+         cursor: pointer;
+         transition: all 0.2s ease;
+         border-color: $light-green;
+         border-style: solid;
+         margin-top: 20px;
+
+         &:hover {
+            color: white;
+            opacity: 1;
+         }
+
+         &.active {
+            opacity: 1;
+            color: white;
+            background-color: $dark-green;
+            cursor: default;
+            font-weight: 600;
+         }
+
+         &:first-child {
+            border-radius: 10px 0 0 10px;
+            border-right: none;
+         }
+         &:last-child {
+            border-radius: 0 10px 10px 0;
+            border-left: none;
+         }
       }
    }
 }

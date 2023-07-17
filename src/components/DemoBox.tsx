@@ -96,6 +96,12 @@ const DemoBox = ({ cssProperty, cssValue, text = '' }: Props) => {
             setCssPrompt([cssValue]);
             demoBoxRef.current?.classList.remove('background-radial');
             break;
+
+         case CssProperty.gradient:
+            setCssObj({ background: cssValue });
+            setCssPrompt(['background: ' + cssValue + ';']);
+            demoBoxRef.current?.classList.remove('background-radial');
+            break;
       }
    }, [cssValue]);
 

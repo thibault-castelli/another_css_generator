@@ -27,6 +27,9 @@ const Header = () => {
                   <li>
                      <NavLink to="/hex-to-rgba">hex-to-rgba</NavLink>
                   </li>
+                  <li>
+                     <NavLink to="/gradient">gradient</NavLink>
+                  </li>
                </ul>
             </nav>
          </div>

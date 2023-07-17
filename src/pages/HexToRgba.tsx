@@ -2,7 +2,7 @@ import DemoBox from '../components/DemoBox';
 import { CssProperty } from '../enums';
 import { useState, useEffect } from 'react';
 import { hexToRgb } from '../utlis';
-import { Rgb, Rgba } from '../interfaces';
+import { Rgb } from '../interfaces';
 import Slider from '../components/Slider';
 import { motion } from 'framer-motion';
 import ColorPicker from '../components/ColorPicker';
