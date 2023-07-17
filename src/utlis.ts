@@ -48,3 +48,16 @@ export const hexToRgb = (hex: string): Rgb => {
       b: parseInt(slicedHex[2], 16),
    };
 };
+
+export const isHex = (hex: string): boolean => {
+   if (hex.length > 7 || hex.length < 6) {
+      return false;
+   }
+
+   let hexValue: string = hex;
+   if (hex.length === 7 && hex[0] === '#') {
+      hexValue = hex.slice(1);
+   }
+
+   return isNumber(hexValue);
+};

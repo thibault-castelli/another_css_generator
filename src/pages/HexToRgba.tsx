@@ -1,19 +1,20 @@
 import DemoBox from '../components/DemoBox';
 import { CssProperty } from '../enums';
 import { useState, useEffect } from 'react';
-import { hexToRgb } from '../utlis';
+import { hexToRgb, isHex } from '../utlis';
 import { Rgb } from '../interfaces';
-import Slider from '../components/Slider';
 import { motion } from 'framer-motion';
-import ColorPicker from '../components/ColorPicker';
+import Slider from '../components/Slider';
 
 const HexToRgba = () => {
+   const [colorTemp, setColorTemp] = useState<string>('#333333');
    const [color, setColor] = useState<string>('#333333');
    const [opacity, setOpacity] = useState<string>('1');
    const [cssValue, setCssValue] = useState<string>('rgba(0, 0, 0, 1)');
 
    const handleReset = () => {
       setColor('#333333');
+      setColorTemp('#333333');
       setOpacity('1');
    };
 
@@ -24,7 +25,13 @@ const HexToRgba = () => {
       setCssValue(
          `rgba(${colorRgb.r}, ${colorRgb.g}, ${colorRgb.b}, ${opacity})`
       );
-   }, [color, opacity]);
+   }, [color, opacity, colorTemp]);
+
+   useEffect(() => {
+      if (isHex(colorTemp)) {
+         setColor(colorTemp);
+      }
+   }, [colorTemp]);
 
    return (
       <motion.main
@@ -46,11 +53,19 @@ const HexToRgba = () => {
                   setSliderValue={setOpacity}
                   step="0.01"
                />
-               <ColorPicker
-                  colorValue={color}
-                  setColorValue={setColor}
-                  name="hex-color"
-               />
+               <div className="container-input">
+                  <label htmlFor="hex">HEX-COLOR</label>
+                  <input
+                     type="text"
+                     name="hex"
+                     id="hex"
+                     value={colorTemp}
+                     onInput={(e) => {
+                        setColorTemp(e.currentTarget.value);
+                     }}
+                  />
+               </div>
+
                <button type="reset" onClick={handleReset}>
                   Reset
                </button>
