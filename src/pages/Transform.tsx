@@ -14,6 +14,16 @@ const Transform = () => {
    const [skewY, setSkewY] = useState<string>('0');
    const [cssValue, setCssValue] = useState<string>('');
 
+   const handleReset = () => {
+      setTranslateX('0');
+      setTranslateY('0');
+      setScaleX('1');
+      setScaleY('1');
+      setRotate('0');
+      setSkewX('0');
+      setSkewY('0');
+   };
+
    useEffect(() => {
       setCssValue(
          `translateX(${translateX}px);translateY(${translateY}px);scaleX(${scaleX});scaleY(${scaleY});rotate(${rotate}deg);skewX(${skewX}deg);skewY(${skewY}deg)`
@@ -22,7 +32,7 @@ const Transform = () => {
 
    return (
       <motion.main
-         initial={{ opacity: 0.5, x: -1000 }}
+         initial={{ opacity: 0.5, x: -500 }}
          animate={{ opacity: 1, x: 0 }}
          transition={{
             x: { type: 'spring', stiffness: 300, damping: 30 },
@@ -88,6 +98,9 @@ const Transform = () => {
                   setSliderValue={setSkewY}
                   unit="deg"
                />
+               <button type="reset" onClick={handleReset}>
+                  Reset
+               </button>
             </form>
             <DemoBox
                cssProperty={CssProperty.transform}

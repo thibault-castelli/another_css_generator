@@ -17,6 +17,16 @@ const BoxShadow = () => {
    const [opacity, setOpacity] = useState<string>('0.8');
    const [cssValue, setCssValue] = useState<string>('10px 10px 0px 0px #333');
 
+   const handleReset = () => {
+      setOffsetX('5');
+      setOffsetY('5');
+      setBlurRadius('5');
+      setSpreadRadius('5');
+      setInset(false);
+      setColor('#333333');
+      setOpacity('0.8');
+   };
+
    let colorRgb: Rgb = hexToRgb(color);
 
    useEffect(() => {
@@ -33,7 +43,7 @@ const BoxShadow = () => {
 
    return (
       <motion.main
-         initial={{ opacity: 0.5, x: -1000 }}
+         initial={{ opacity: 0.5, x: -500 }}
          animate={{ opacity: 1, x: 0 }}
          transition={{
             x: { type: 'spring', stiffness: 300, damping: 30 },
@@ -97,6 +107,9 @@ const BoxShadow = () => {
                   setCheckBoxValue={setInset}
                   name="inset"
                />
+               <button type="reset" onClick={handleReset}>
+                  Reset
+               </button>
             </form>
 
             <DemoBox cssProperty={CssProperty.boxShadow} cssValue={cssValue} />

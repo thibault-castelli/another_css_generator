@@ -15,6 +15,16 @@ const BorderRadius = () => {
    const [all, setAll] = useState<string>('10');
    const [cssValue, setCssValue] = useState<string>('0px');
 
+   const handleReset = () => {
+      setIsDetailBorder(false);
+      setIsPercentage(false);
+      setTopLeft('10');
+      setTopRight('10');
+      setbottomRight('10');
+      setbottomLeft('10');
+      setAll('10');
+   };
+
    useEffect(() => {
       const unit: string = isPercentage ? '%' : 'px';
       setCssValue(
@@ -34,7 +44,7 @@ const BorderRadius = () => {
 
    return (
       <motion.main
-         initial={{ opacity: 0.5, x: -1000 }}
+         initial={{ opacity: 0.5, x: -500 }}
          animate={{ opacity: 1, x: 0 }}
          transition={{
             x: { type: 'spring', stiffness: 300, damping: 30 },
@@ -47,7 +57,7 @@ const BorderRadius = () => {
                <AnimatePresence>
                   {isDetailBorder ? (
                      <motion.div
-                        initial={{ scale: 0 }}
+                        initial={{ scale: 0.5 }}
                         animate={{ scale: 1 }}
                         exit={{ height: 0, opacity: 0, scale: 0 }}
                         key="1"
@@ -87,7 +97,7 @@ const BorderRadius = () => {
                      </motion.div>
                   ) : (
                      <motion.div
-                        initial={{ scale: 0 }}
+                        initial={{ scale: 0.5 }}
                         animate={{ scale: 1 }}
                         exit={{ height: 0, opacity: 0, scale: 0 }}
                         key="2"
@@ -113,6 +123,9 @@ const BorderRadius = () => {
                   checkBoxValue={isPercentage}
                   setCheckBoxValue={setIsPercentage}
                />
+               <button type="reset" onClick={handleReset}>
+                  Reset
+               </button>
             </form>
 
             <DemoBox
