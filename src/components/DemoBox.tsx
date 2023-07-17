@@ -1,5 +1,5 @@
 import { CssProperty } from '../enums';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import {
    BsFillClipboard2CheckFill,
    BsFillClipboard2Fill,
@@ -15,6 +15,8 @@ const DemoBox = ({ cssProperty, cssValue, text = '' }: Props) => {
    const [cssObj, setCssObj] = useState({});
    const [cssPrompt, setCssPrompt] = useState<string[]>(['']);
    const [isCopied, setIsCopied] = useState<boolean>(false);
+
+   const demoBoxRef = useRef<HTMLDivElement>(null);
 
    useEffect(() => {
       switch (cssProperty) {
@@ -88,6 +90,12 @@ const DemoBox = ({ cssProperty, cssValue, text = '' }: Props) => {
             transformPrompt[0] += ';';
             setCssPrompt(transformPrompt);
             break;
+
+         case CssProperty.color:
+            setCssObj({ backgroundColor: cssValue });
+            setCssPrompt([cssValue]);
+            demoBoxRef.current?.classList.remove('background-radial');
+            break;
       }
    }, [cssValue]);
 
@@ -103,7 +111,11 @@ const DemoBox = ({ cssProperty, cssValue, text = '' }: Props) => {
 
    return (
       <section className="demo-box-container">
-         <div className="demo-box" style={cssObj}>
+         <div
+            className="demo-box background-radial"
+            style={cssObj}
+            ref={demoBoxRef}
+         >
             {text.length > 0 && <p>{text}</p>}
          </div>
          <div className="copy-container">

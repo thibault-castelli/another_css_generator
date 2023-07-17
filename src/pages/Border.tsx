@@ -5,7 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Select from '../components/Select';
 import Slider from '../components/Slider';
 import ColorPicker from '../components/ColorPicker';
-import { Rgb, hexToRgb } from '../utlis';
+import { hexToRgb } from '../utlis';
+import { Rgb } from '../interfaces';
 import CheckBox from '../components/CheckBox';
 
 const borderStyles = [

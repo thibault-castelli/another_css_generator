@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { hexToRgb, Rgb } from '../utlis';
+import { hexToRgb } from '../utlis';
+import { Rgb } from '../interfaces';
 import { CssProperty } from '../enums';
 import Slider from '../components/Slider';
 import CheckBox from '../components/CheckBox';

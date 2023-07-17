@@ -31,11 +31,7 @@ export const isNumber = (input: string): boolean => {
    return true;
 };
 
-export interface Rgb {
-   r: number;
-   g: number;
-   b: number;
-}
+import { Rgb } from './interfaces';
 
 export const hexToRgb = (hex: string): Rgb => {
    let startIndex = 0;

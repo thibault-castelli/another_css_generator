@@ -341,13 +341,15 @@ form button[type=reset]:hover {
 .demo-box-container .demo-box {
   width: 70%;
   min-height: 300px;
-  background: #84a98c;
-  background: radial-gradient(circle farthest-corner at center center, #84a98c 25%, #354f52 95%);
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: -1;
+}
+.demo-box-container .demo-box.background-radial {
+  background: #84a98c;
+  background: radial-gradient(circle farthest-corner at center center, #84a98c 25%, #354f52 95%);
 }
 .demo-box-container .demo-box p {
   color: #2f3e46;
