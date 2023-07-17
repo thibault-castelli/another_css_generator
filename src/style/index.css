@@ -318,6 +318,28 @@ form .select-container select {
 form .select-container select:hover {
   opacity: 1;
 }
+form .container-input {
+  margin-top: 20px;
+}
+form .container-input label {
+  margin-right: 20px;
+}
+form .container-input input[type=text] {
+  background-color: #84a98c;
+  border: none;
+  padding: 10px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  color: #2f3e46;
+  opacity: 0.7;
+  transition: all 0.2s ease;
+}
+form .container-input input[type=text]:hover, form .container-input input[type=text]:focus {
+  opacity: 1;
+}
+form .container-input input[type=text]:focus {
+  outline: none;
+}
 form button[type=reset] {
   background-color: #2f3e46;
   border: none;

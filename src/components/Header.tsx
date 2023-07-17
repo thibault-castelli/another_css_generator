@@ -16,19 +16,19 @@ const Header = () => {
                      <NavLink to="/text-shadow">text-shadow</NavLink>
                   </li>
                   <li>
+                     <NavLink to="/border">border</NavLink>
+                  </li>
+                  <li>
                      <NavLink to="/border-radius">border-radius</NavLink>
                   </li>
                   <li>
-                     <NavLink to="/border">border</NavLink>
+                     <NavLink to="/gradient">gradient</NavLink>
                   </li>
                   <li>
                      <NavLink to="/transform">transform</NavLink>
                   </li>
                   <li>
                      <NavLink to="/hex-to-rgba">hex-to-rgba</NavLink>
-                  </li>
-                  <li>
-                     <NavLink to="/gradient">gradient</NavLink>
                   </li>
                </ul>
             </nav>
