@@ -77,7 +77,7 @@ header a {
   transition: all 0.2s ease;
   display: inline-block;
 }
-header a:hover {
+header a:hover, header a:focus {
   opacity: 1;
   color: white;
 }
@@ -118,9 +118,12 @@ nav ul li a::after {
   transition: transform 0.2s ease-out;
   transform: scaleX(0);
 }
-nav ul li a:hover::after {
+nav ul li a:hover::after, nav ul li a:focus::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+nav ul li a:focus {
+  outline: none;
 }
 
 form {
@@ -148,6 +151,7 @@ form .slider-container input[type=range] {
 }
 form .slider-container input[type=range]:hover, form .slider-container input[type=range]:focus {
   opacity: 1;
+  box-shadow: 0 0 3px rgba(132, 169, 140, 0.5);
 }
 form .slider-container input[type=range]:hover::-webkit-slider-thumb, form .slider-container input[type=range]:hover::-moz-range-thumb, form .slider-container input[type=range]:focus::-webkit-slider-thumb, form .slider-container input[type=range]:focus::-moz-range-thumb {
   transform: scale(1.2);
@@ -159,6 +163,8 @@ form .slider-container input[type=range]::-webkit-slider-thumb {
   height: 30px;
   border-radius: 50%;
   background-color: #354f52;
+  border: none;
+  box-shadow: 3px 3px 3px 0px #333333;
   cursor: pointer;
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
@@ -168,7 +174,8 @@ form .slider-container input[type=range]::-moz-range-thumb {
   height: 30px;
   border-radius: 50%;
   background: white;
-  border: 1px solid #354f52;
+  border: none;
+  box-shadow: 3px 3px 3px 0px #333333;
   cursor: pointer;
   -moz-transition: all 0.1s ease;
   transition: all 0.1s ease;
@@ -207,17 +214,20 @@ form .color-container {
 form .color-container input[type=color] {
   background-color: #2f3e46;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   width: 60px;
   height: 45px;
-  padding: 5px;
+  padding: 5px 10px;
   opacity: 0.8;
   transition: all 0.2s ease;
   cursor: pointer;
 }
-form .color-container input[type=color]:hover {
+form .color-container input[type=color]:hover, form .color-container input[type=color]:focus {
   background-color: #84a98c;
   opacity: 1;
+  box-shadow: 0 0 3px rgba(132, 169, 140, 0.5);
+  padding: 3px 5px;
+  outline: none;
 }
 form .color-container label {
   margin-right: 20px;
@@ -243,7 +253,7 @@ form .container-checkbox .checkbox-wrapper .tgl + .tgl-btn {
   opacity: 0.7;
   box-shadow: shadow;
 }
-form .container-checkbox .checkbox-wrapper .tgl + .tgl-btn:hover {
+form .container-checkbox .checkbox-wrapper .tgl + .tgl-btn:hover, form .container-checkbox .checkbox-wrapper .tgl + .tgl-btn:focus {
   opacity: 1;
 }
 form .container-checkbox .checkbox-wrapper .tgl + .tgl-btn:after,
@@ -322,8 +332,9 @@ form .select-container select {
   box-shadow: 3px 3px 3px 0px #333333;
   transition: all 0.3s ease;
 }
-form .select-container select:hover {
+form .select-container select:hover, form .select-container select:focus {
   opacity: 1;
+  outline: none;
 }
 form .container-input {
   margin-top: 20px;
@@ -343,6 +354,7 @@ form .container-input input[type=text] {
 }
 form .container-input input[type=text]:hover, form .container-input input[type=text]:focus {
   opacity: 1;
+  box-shadow: 0 0 3px rgba(132, 169, 140, 0.5);
 }
 form .container-input input[type=text]:focus {
   outline: none;
@@ -360,9 +372,10 @@ form button[type=reset] {
   box-shadow: 3px 3px 3px 0px #333333;
   cursor: pointer;
 }
-form button[type=reset]:hover {
+form button[type=reset]:hover, form button[type=reset]:focus {
   opacity: 1;
   color: white;
+  outline: none;
 }
 form button[type=reset].active {
   transform: translate(4px, 4px);
@@ -380,10 +393,12 @@ form .btn-container button {
   border-color: #84a98c;
   border-style: solid;
   margin-top: 20px;
+  box-shadow: 0 0 3px rgba(132, 169, 140, 0.5);
 }
-form .btn-container button:hover {
+form .btn-container button:hover, form .btn-container button:focus {
   color: white;
   opacity: 1;
+  outline: none;
 }
 form .btn-container button.active {
   opacity: 1;
@@ -448,9 +463,10 @@ form .btn-container button:last-child {
   transition: all 0.2s ease;
   opacity: 0.7;
 }
-.demo-box-container .copy-container .copy-btn-container:hover {
+.demo-box-container .copy-container .copy-btn-container:hover, .demo-box-container .copy-container .copy-btn-container:focus {
   color: white;
   opacity: 1;
+  outline: none;
 }
 .demo-box-container .copy-container .copy-btn-container button {
   background-color: transparent;
@@ -458,6 +474,10 @@ form .btn-container button:last-child {
   color: #cad2c5;
   font-size: 2rem;
   cursor: pointer;
+}
+.demo-box-container .copy-container .copy-btn-container button:focus {
+  color: white;
+  opacity: 1;
 }
 .demo-box-container .copy-container .copy-btn-container span {
   display: block;

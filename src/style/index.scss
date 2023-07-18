@@ -8,6 +8,7 @@ $light-green: #84a98c;
 $white: #cad2c5;
 
 $shadow: 3px 3px 3px 0px #333333;
+$neon-shadow: 0 0 3px rgba(132, 169, 140, 0.5);
 
 // --- GLOBAL CLASSES ---
 .container {
@@ -89,7 +90,8 @@ header {
       transition: all 0.2s ease;
       display: inline-block;
 
-      &:hover {
+      &:hover,
+      &:focus {
          opacity: 1;
          color: white;
       }
@@ -137,9 +139,14 @@ nav {
                transform: scaleX(0);
             }
 
-            &:hover::after {
+            &:hover::after,
+            &:focus::after {
                transform: scaleX(1);
                transform-origin: bottom left;
+            }
+
+            &:focus {
+               outline: none;
             }
          }
       }
@@ -174,6 +181,7 @@ form {
          &:hover,
          &:focus {
             opacity: 1;
+            box-shadow: $neon-shadow;
 
             &::-webkit-slider-thumb,
             &::-moz-range-thumb {
@@ -187,6 +195,8 @@ form {
             height: 30px;
             border-radius: 50%;
             background-color: $dark-green;
+            border: none;
+            box-shadow: $shadow;
             cursor: pointer;
             transition: all 0.1s ease;
          }
@@ -195,7 +205,8 @@ form {
             height: 30px;
             border-radius: 50%;
             background: white;
-            border: 1px solid $dark-green;
+            border: none;
+            box-shadow: $shadow;
             cursor: pointer;
             transition: all 0.1s ease;
          }
@@ -240,17 +251,21 @@ form {
       input[type='color'] {
          background-color: $black;
          border: none;
-         border-radius: 10px;
+         border-radius: 5px;
          width: 60px;
          height: 45px;
-         padding: 5px;
+         padding: 5px 10px;
          opacity: 0.8;
          transition: all 0.2s ease;
          cursor: pointer;
 
-         &:hover {
+         &:hover,
+         &:focus {
             background-color: $light-green;
             opacity: 1;
+            box-shadow: $neon-shadow;
+            padding: 3px 5px;
+            outline: none;
          }
       }
 
@@ -282,7 +297,8 @@ form {
          opacity: 0.7;
          box-shadow: shadow;
 
-         &:hover {
+         &:hover,
+         &:focus {
             opacity: 1;
          }
       }
@@ -369,8 +385,10 @@ form {
          box-shadow: $shadow;
          transition: all 0.3s ease;
 
-         &:hover {
+         &:hover,
+         &:focus {
             opacity: 1;
+            outline: none;
          }
       }
    }
@@ -395,6 +413,7 @@ form {
          &:hover,
          &:focus {
             opacity: 1;
+            box-shadow: $neon-shadow;
          }
 
          &:focus {
@@ -417,9 +436,11 @@ form {
       box-shadow: $shadow;
       cursor: pointer;
 
-      &:hover {
+      &:hover,
+      &:focus {
          opacity: 1;
          color: white;
+         outline: none;
       }
 
       &.active {
@@ -441,10 +462,13 @@ form {
          border-color: $light-green;
          border-style: solid;
          margin-top: 20px;
+         box-shadow: $neon-shadow;
 
-         &:hover {
+         &:hover,
+         &:focus {
             color: white;
             opacity: 1;
+            outline: none;
          }
 
          &.active {
@@ -523,9 +547,11 @@ form {
          transition: all 0.2s ease;
          opacity: 0.7;
 
-         &:hover {
+         &:hover,
+         &:focus {
             color: white;
             opacity: 1;
+            outline: none;
          }
 
          button {
@@ -534,6 +560,11 @@ form {
             color: $white;
             font-size: 2rem;
             cursor: pointer;
+
+            &:focus {
+               color: white;
+               opacity: 1;
+            }
          }
 
          span {

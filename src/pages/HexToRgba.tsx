@@ -5,33 +5,40 @@ import { hexToRgb, isHex } from '../utlis';
 import { Rgb } from '../interfaces';
 import { motion } from 'framer-motion';
 import Slider from '../components/Slider';
+import ColorPicker from '../components/ColorPicker';
 
 const HexToRgba = () => {
    const [colorTemp, setColorTemp] = useState<string>('#333333');
+   const [hexColor, setHexColor] = useState<string>('#333333');
    const [color, setColor] = useState<string>('#333333');
    const [opacity, setOpacity] = useState<string>('1');
    const [cssValue, setCssValue] = useState<string>('rgba(0, 0, 0, 1)');
 
    const handleReset = () => {
-      setColor('#333333');
+      setHexColor('#333333');
       setColorTemp('#333333');
+      setColor('#333333');
       setOpacity('1');
    };
 
    let colorRgb: Rgb;
 
    useEffect(() => {
-      colorRgb = hexToRgb(color);
+      colorRgb = hexToRgb(hexColor);
       setCssValue(
          `rgba(${colorRgb.r}, ${colorRgb.g}, ${colorRgb.b}, ${opacity})`
       );
-   }, [color, opacity, colorTemp]);
+   }, [hexColor, opacity, colorTemp, color]);
 
    useEffect(() => {
       if (isHex(colorTemp)) {
-         setColor(colorTemp);
+         setHexColor(colorTemp);
       }
    }, [colorTemp]);
+
+   useEffect(() => {
+      setColorTemp(color);
+   }, [color]);
 
    return (
       <motion.main
@@ -52,6 +59,11 @@ const HexToRgba = () => {
                   sliderValue={opacity}
                   setSliderValue={setOpacity}
                   step="0.01"
+               />
+               <ColorPicker
+                  colorValue={color}
+                  setColorValue={setColor}
+                  name="color"
                />
                <div className="container-input">
                   <label htmlFor="hex">HEX-COLOR</label>
