@@ -84,7 +84,17 @@ const TextShadow = () => {
                   setColorValue={setColor}
                   name="color"
                />
-               <button type="reset" onClick={handleReset}>
+               <button
+                  type="reset"
+                  onClick={handleReset}
+                  onMouseDown={(e) => {
+                     e.currentTarget.classList.add('active');
+                  }}
+                  onMouseUp={(e) => {
+                     e.currentTarget.classList.remove('active');
+                     console.log('up');
+                  }}
+               >
                   Reset
                </button>
             </form>

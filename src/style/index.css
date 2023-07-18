@@ -149,6 +149,9 @@ form .slider-container input[type=range] {
 form .slider-container input[type=range]:hover, form .slider-container input[type=range]:focus {
   opacity: 1;
 }
+form .slider-container input[type=range]:hover::-webkit-slider-thumb, form .slider-container input[type=range]:hover::-moz-range-thumb, form .slider-container input[type=range]:focus::-webkit-slider-thumb, form .slider-container input[type=range]:focus::-moz-range-thumb {
+  transform: scale(1.2);
+}
 form .slider-container input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -157,6 +160,8 @@ form .slider-container input[type=range]::-webkit-slider-thumb {
   border-radius: 50%;
   background-color: #354f52;
   cursor: pointer;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
 }
 form .slider-container input[type=range]::-moz-range-thumb {
   width: 30px;
@@ -165,6 +170,8 @@ form .slider-container input[type=range]::-moz-range-thumb {
   background: white;
   border: 1px solid #354f52;
   cursor: pointer;
+  -moz-transition: all 0.1s ease;
+  transition: all 0.1s ease;
 }
 form .slider-container .label-container {
   position: relative;
@@ -357,6 +364,10 @@ form button[type=reset]:hover {
   opacity: 1;
   color: white;
 }
+form button[type=reset].active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}
 form .btn-container button {
   font-weight: normal;
   font-size: 1.1rem;
@@ -446,6 +457,7 @@ form .btn-container button:last-child {
   border: none;
   color: #cad2c5;
   font-size: 2rem;
+  cursor: pointer;
 }
 .demo-box-container .copy-container .copy-btn-container span {
   display: block;
