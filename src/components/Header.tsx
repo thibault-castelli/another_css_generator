@@ -32,6 +32,11 @@ const Header = () => {
             <motion.nav
                initial={false}
                animate={isHamburgerOpen ? 'open' : 'closed'}
+               onBlur={(e) => {
+                  if (!e.currentTarget.contains(e.relatedTarget)) {
+                     setIsHamburgerOpen(false);
+                  }
+               }}
             >
                <motion.button
                   type="button"
@@ -41,6 +46,8 @@ const Header = () => {
                         e.currentTarget.blur();
                      }
                   }}
+                  aria-expanded={isHamburgerOpen}
+                  aria-controls="nav-header"
                   variants={{
                      open: { rotate: -90, margin: '10px 0 10px auto' },
                      closed: { rotate: 0 },
@@ -50,6 +57,7 @@ const Header = () => {
                </motion.button>
 
                <motion.ul
+                  id="nav-header"
                   variants={{
                      open: {
                         height: '223px',

@@ -3,8 +3,6 @@
 - Faire une page filter images
 - Faire la page d'accueil
 - Faire le footer
-- Styliser le select
-- Fermer la navbar quand click ailleurs
 
 - Checker l'accéssibilité
 - Clean le code
