@@ -1,0 +1,36 @@
+// --- VARIABLES ---
+$black: #2f3e46;
+$dark-green: #354f52;
+$green: #52796f;
+$light-green: #84a98c;
+$white: #cad2c5;
+
+$shadow: 3px 3px 3px 0px #333333;
+$neon-shadow: 0 0 3px rgba(132, 169, 140, 0.5);
+
+// --- RESET BUTTON ---
+button[type='reset'] {
+   background-color: $black;
+   border: none;
+   padding: 10px;
+   color: $white;
+   border-radius: 10px;
+   font-size: 1.3rem;
+   margin-top: 20px;
+   opacity: 0.7;
+   transition: all 0.2s ease;
+   box-shadow: $shadow;
+   cursor: pointer;
+
+   &:hover,
+   &:focus {
+      opacity: 1;
+      color: white;
+      outline: none;
+   }
+
+   &.active {
+      transform: translate(4px, 4px);
+      box-shadow: none;
+   }
+}

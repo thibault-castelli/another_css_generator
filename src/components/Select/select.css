@@ -1,0 +1,25 @@
+.select-container {
+  margin-top: 20px;
+}
+.select-container select,
+.select-container option {
+  font-size: 1rem;
+  font-family: inherit;
+}
+.select-container label {
+  margin-right: 20px;
+}
+.select-container select {
+  background-color: #2f3e46;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  color: #cad2c5;
+  opacity: 0.7;
+  box-shadow: 3px 3px 3px 0px #333333;
+  transition: all 0.3s ease;
+}
+.select-container select:hover, .select-container select:focus {
+  opacity: 1;
+  outline: none;
+}/*# sourceMappingURL=select.css.map */

@@ -1,7 +1,13 @@
+import './select.css';
+
 interface Props {
+   /** Options available for the select */
    options: string[];
+   /** Name of the select label */
    name: string;
+   /** State value to keep track of the selected option */
    selectValue: string;
+   /** State function */
    setSelectValue: React.Dispatch<React.SetStateAction<string>>;
 }
 

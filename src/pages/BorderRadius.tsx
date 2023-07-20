@@ -1,9 +1,10 @@
 import { CssProperty } from '../enums';
 import { useState, useEffect } from 'react';
-import Slider from '../components/Slider';
-import CheckBox from '../components/CheckBox';
-import DemoBox from '../components/DemoBox';
+import Slider from '../components/Slider/Slider';
+import CheckBox from '../components/CheckBox/CheckBox';
+import DemoBox from '../components/DemoBox/DemoBox';
 import { AnimatePresence, motion } from 'framer-motion';
+import ResetBtn from '../components/ResetBtn/ResetBtn';
 
 const BorderRadius = () => {
    const [isDetailBorder, setIsDetailBorder] = useState<boolean>(false);
@@ -123,19 +124,7 @@ const BorderRadius = () => {
                   checkBoxValue={isPercentage}
                   setCheckBoxValue={setIsPercentage}
                />
-               <button
-                  type="reset"
-                  onClick={handleReset}
-                  onMouseDown={(e) => {
-                     e.currentTarget.classList.add('active');
-                  }}
-                  onMouseUp={(e) => {
-                     e.currentTarget.classList.remove('active');
-                     console.log('up');
-                  }}
-               >
-                  Reset
-               </button>
+               <ResetBtn handleReset={handleReset} />
             </form>
 
             <DemoBox

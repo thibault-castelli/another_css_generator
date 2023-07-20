@@ -1,0 +1,68 @@
+.demo-box-container {
+  margin-top: 20px;
+  color: #cad2c5;
+}
+.demo-box-container .demo-box {
+  width: 90%;
+  min-height: 300px;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+}
+.demo-box-container .demo-box.background-radial {
+  background: #84a98c;
+  background: radial-gradient(circle farthest-corner at center center, #84a98c 25%, #354f52 95%);
+}
+.demo-box-container .demo-box p {
+  color: #2f3e46;
+  font-size: 3rem;
+  padding: 0 20px;
+}
+.demo-box-container .copy-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2f3e46;
+  margin: 100px 0 0 auto;
+  width: 90%;
+  border-radius: 10px;
+  padding: 5px 20px;
+  box-shadow: 3px 3px 3px 0px #333333;
+}
+.demo-box-container .copy-container p {
+  margin-right: 20px;
+  z-index: 1;
+}
+.demo-box-container .copy-container p span {
+  display: block;
+}
+.demo-box-container .copy-container .copy-btn-container {
+  text-align: center;
+  width: 20%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  opacity: 0.7;
+  margin-bottom: 5px;
+}
+.demo-box-container .copy-container .copy-btn-container:hover, .demo-box-container .copy-container .copy-btn-container:focus {
+  color: white;
+  opacity: 1;
+  outline: none;
+}
+.demo-box-container .copy-container .copy-btn-container button {
+  background-color: transparent;
+  border: none;
+  color: #cad2c5;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.demo-box-container .copy-container .copy-btn-container button:focus {
+  color: white;
+  opacity: 1;
+}
+.demo-box-container .copy-container .copy-btn-container span {
+  display: block;
+  font-size: 0.8rem;
+}/*# sourceMappingURL=demobox.css.map */

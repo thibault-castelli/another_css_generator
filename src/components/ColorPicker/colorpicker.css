@@ -1,0 +1,26 @@
+.color-container {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.color-container input[type=color] {
+  background-color: #2f3e46;
+  border: none;
+  border-radius: 5px;
+  width: 60px;
+  height: 45px;
+  padding: 5px 10px;
+  opacity: 0.8;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.color-container input[type=color]:hover, .color-container input[type=color]:focus {
+  background-color: #84a98c;
+  opacity: 1;
+  box-shadow: 0 0 3px rgba(132, 169, 140, 0.5);
+  padding: 3px 5px;
+  outline: none;
+}
+.color-container label {
+  margin-right: 20px;
+}/*# sourceMappingURL=colorpicker.css.map */

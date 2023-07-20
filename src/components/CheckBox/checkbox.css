@@ -1,0 +1,79 @@
+.container-checkbox {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.container-checkbox label {
+  margin-right: 20px;
+}
+.container-checkbox .checkbox-wrapper .tgl {
+  display: none;
+}
+.container-checkbox .checkbox-wrapper .tgl + .tgl-btn {
+  outline: 0;
+  display: block;
+  width: 4em;
+  height: 2em;
+  position: relative;
+  cursor: pointer;
+  opacity: 0.7;
+  box-shadow: shadow;
+}
+.container-checkbox .checkbox-wrapper .tgl + .tgl-btn:hover, .container-checkbox .checkbox-wrapper .tgl + .tgl-btn:focus {
+  opacity: 1;
+}
+.container-checkbox .checkbox-wrapper .tgl + .tgl-btn:after,
+.container-checkbox .checkbox-wrapper .tgl + .tgl-btn:before {
+  position: relative;
+  display: block;
+  content: "";
+  width: 50%;
+  height: 100%;
+}
+.container-checkbox .checkbox-wrapper .tgl + .tgl-btn:after {
+  left: 0;
+}
+.container-checkbox .checkbox-wrapper .tgl + .tgl-btn:before {
+  display: none;
+}
+.container-checkbox .checkbox-wrapper .tgl:checked + .tgl-btn:after {
+  left: 50%;
+}
+.container-checkbox .checkbox-wrapper .tgl-skewed + .tgl-btn {
+  overflow: hidden;
+  transform: skew(-10deg);
+  backface-visibility: hidden;
+  transition: all 0.2s ease;
+  background: #2f3e46;
+}
+.container-checkbox .checkbox-wrapper .tgl-skewed + .tgl-btn:after,
+.container-checkbox .checkbox-wrapper .tgl-skewed + .tgl-btn:before {
+  transform: skew(10deg);
+  display: inline-block;
+  transition: all 0.2s ease;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  line-height: 2em;
+  font-weight: bold;
+  color: #cad2c5;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+.container-checkbox .checkbox-wrapper .tgl-skewed + .tgl-btn:after {
+  left: 100%;
+  content: attr(data-tg-on);
+  color: white;
+}
+.container-checkbox .checkbox-wrapper .tgl-skewed + .tgl-btn:before {
+  left: 0;
+  content: attr(data-tg-off);
+}
+.container-checkbox .checkbox-wrapper .tgl-skewed:checked + .tgl-btn {
+  background: #84a98c;
+}
+.container-checkbox .checkbox-wrapper .tgl-skewed:checked + .tgl-btn:before {
+  left: -100%;
+}
+.container-checkbox .checkbox-wrapper .tgl-skewed:checked + .tgl-btn:after {
+  left: 0;
+}/*# sourceMappingURL=checkbox.css.map */

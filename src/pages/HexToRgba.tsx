@@ -1,11 +1,13 @@
-import DemoBox from '../components/DemoBox';
+import DemoBox from '../components/DemoBox/DemoBox';
 import { CssProperty } from '../enums';
 import { useState, useEffect } from 'react';
 import { hexToRgb, isHex } from '../utlis';
 import { Rgb } from '../interfaces';
 import { motion } from 'framer-motion';
-import Slider from '../components/Slider';
-import ColorPicker from '../components/ColorPicker';
+import Slider from '../components/Slider/Slider';
+import ColorPicker from '../components/ColorPicker/ColorPicker';
+import ResetBtn from '../components/ResetBtn/ResetBtn';
+import InputText from '../components/InputText/InputText';
 
 const HexToRgba = () => {
    const [colorTemp, setColorTemp] = useState<string>('#333333');
@@ -65,32 +67,13 @@ const HexToRgba = () => {
                   setColorValue={setColor}
                   name="color"
                />
-               <div className="container-input">
-                  <label htmlFor="hex">HEX-COLOR</label>
-                  <input
-                     type="text"
-                     name="hex"
-                     id="hex"
-                     value={colorTemp}
-                     onInput={(e) => {
-                        setColorTemp(e.currentTarget.value);
-                     }}
-                  />
-               </div>
+               <InputText
+                  name="hex-color"
+                  inputValue={colorTemp}
+                  setInputValue={setColorTemp}
+               />
 
-               <button
-                  type="reset"
-                  onClick={handleReset}
-                  onMouseDown={(e) => {
-                     e.currentTarget.classList.add('active');
-                  }}
-                  onMouseUp={(e) => {
-                     e.currentTarget.classList.remove('active');
-                     console.log('up');
-                  }}
-               >
-                  Reset
-               </button>
+               <ResetBtn handleReset={handleReset} />
             </form>
             <DemoBox cssProperty={CssProperty.color} cssValue={cssValue} />
          </section>

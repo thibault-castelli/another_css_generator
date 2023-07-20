@@ -1,0 +1,51 @@
+// --- VARIABLES ---
+$black: #2f3e46;
+$dark-green: #354f52;
+$green: #52796f;
+$light-green: #84a98c;
+$white: #cad2c5;
+
+$shadow: 3px 3px 3px 0px #333333;
+$neon-shadow: 0 0 3px rgba(132, 169, 140, 0.5);
+
+// --- DOUBLE BUTTONS ---
+.double-btn-container {
+   button {
+      font-weight: normal;
+      font-size: 1.1rem;
+      padding: 10px;
+      background-color: $black;
+      color: $white;
+      opacity: 0.7;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-color: $light-green;
+      border-style: solid;
+      margin-top: 20px;
+      box-shadow: $neon-shadow;
+
+      &:hover,
+      &:focus {
+         color: white;
+         opacity: 1;
+         outline: none;
+      }
+
+      &.active {
+         opacity: 1;
+         color: white;
+         background-color: $dark-green;
+         cursor: default;
+         font-weight: 600;
+      }
+
+      &:first-child {
+         border-radius: 10px 0 0 10px;
+         border-right: none;
+      }
+      &:last-child {
+         border-radius: 0 10px 10px 0;
+         border-left: none;
+      }
+   }
+}

@@ -1,0 +1,38 @@
+// --- VARIABLES ---
+$black: #2f3e46;
+$dark-green: #354f52;
+$green: #52796f;
+$light-green: #84a98c;
+$white: #cad2c5;
+
+$shadow: 3px 3px 3px 0px #333333;
+$neon-shadow: 0 0 3px rgba(132, 169, 140, 0.5);
+
+// --- INPUT TEXT ---
+.container-input {
+   margin-top: 20px;
+
+   label {
+      margin-right: 20px;
+   }
+   input[type='text'] {
+      background-color: $light-green;
+      border: none;
+      padding: 10px;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      color: $black;
+      opacity: 0.7;
+      transition: all 0.2s ease;
+
+      &:hover,
+      &:focus {
+         opacity: 1;
+         box-shadow: $neon-shadow;
+      }
+
+      &:focus {
+         outline: none;
+      }
+   }
+}

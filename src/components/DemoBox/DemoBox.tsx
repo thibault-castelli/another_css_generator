@@ -1,18 +1,25 @@
-import { CssProperty } from '../enums';
+import { CssProperty } from '../../enums';
 import { useEffect, useState, useRef } from 'react';
 import {
    BsFillClipboard2CheckFill,
    BsFillClipboard2Fill,
 } from 'react-icons/bs';
+import './demobox.css';
 
 interface Props {
+   /** Css property to apply to the demo box */
    cssProperty: CssProperty;
+   /** Css value to apply to the demo box */
    cssValue: string;
+   /** Text to prompt in the demo box */
    text?: string;
 }
 
+/** A demo box to visualize changes made to it with css properties */
 const DemoBox = ({ cssProperty, cssValue, text = '' }: Props) => {
+   // Object that will be used to style the demo box
    const [cssObj, setCssObj] = useState({});
+   // Strings that will be copied by the user to be used in its css file
    const [cssPrompt, setCssPrompt] = useState<string[]>(['']);
    const [isCopied, setIsCopied] = useState<boolean>(false);
 
@@ -24,18 +31,22 @@ const DemoBox = ({ cssProperty, cssValue, text = '' }: Props) => {
             setCssObj({ boxShadow: cssValue });
             setCssPrompt(['box-shadow: ' + cssValue + ';']);
             break;
+
          case CssProperty.textShadow:
             setCssObj({ textShadow: cssValue });
             setCssPrompt(['text-shadow: ' + cssValue + ';']);
             break;
+
          case CssProperty.borderRadius:
             setCssObj({ borderRadius: cssValue });
             setCssPrompt(['border-radius: ' + cssValue + ';']);
             break;
+
          case CssProperty.border:
             setCssObj({ border: cssValue });
             setCssPrompt(['border: ' + cssValue + ';']);
             break;
+
          case CssProperty.borderDetailed:
             const borders = cssValue.split(';');
             setCssObj({
@@ -94,18 +105,24 @@ const DemoBox = ({ cssProperty, cssValue, text = '' }: Props) => {
          case CssProperty.color:
             setCssObj({ backgroundColor: cssValue });
             setCssPrompt([cssValue]);
+
+            // Remove default style of the demo box
             demoBoxRef.current?.classList.remove('background-radial');
             break;
 
          case CssProperty.gradient:
             setCssObj({ background: cssValue });
             setCssPrompt(['background: ' + cssValue + ';']);
+
+            // Remove default style of the demo box
             demoBoxRef.current?.classList.remove('background-radial');
             break;
       }
    }, [cssValue]);
 
+   // Feedback when the user click on the copy button
    useEffect(() => {
+      // Wait 2s before reseting the copy button
       const timeOut = setTimeout(() => {
          setIsCopied(false);
       }, 2000);

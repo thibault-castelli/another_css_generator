@@ -1,12 +1,20 @@
 import { useRef } from 'react';
+import './checkbox.css';
 
 interface Props {
+   /** State value for the checkbox to keep track of the check value */
    checkBoxValue: boolean;
+   /** State function */
    setCheckBoxValue: React.Dispatch<React.SetStateAction<boolean>>;
+   /** Name of the checkbox label */
    name: string;
 }
 
+/**
+ * Checkbox with 'on' and 'off' visual.
+ */
 const CheckBox = ({ checkBoxValue, setCheckBoxValue, name }: Props) => {
+   // Use ref to make the checkbox focusable
    const checkboxRef = useRef<HTMLInputElement>(null);
 
    return (

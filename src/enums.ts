@@ -1,3 +1,6 @@
+/**
+ * Css properties for demo box.
+ */
 export enum CssProperty {
    boxShadow,
    textShadow,

@@ -1,0 +1,94 @@
+// --- VARIABLES ---
+$black: #2f3e46;
+$dark-green: #354f52;
+$green: #52796f;
+$light-green: #84a98c;
+$white: #cad2c5;
+
+$shadow: 3px 3px 3px 0px #333333;
+$neon-shadow: 0 0 3px rgba(132, 169, 140, 0.5);
+
+// --- DEMO BOX ---
+.demo-box-container {
+   margin-top: 20px;
+   color: $white;
+
+   .demo-box {
+      width: 90%;
+      min-height: 300px;
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: -1;
+
+      &.background-radial {
+         background: #84a98c;
+         background: radial-gradient(
+            circle farthest-corner at center center,
+            #84a98c 25%,
+            #354f52 95%
+         );
+      }
+
+      p {
+         color: $black;
+         font-size: 3rem;
+         padding: 0 20px;
+      }
+   }
+   .copy-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: $black;
+      margin: 100px 0 0 auto;
+      width: 90%;
+      border-radius: 10px;
+      padding: 5px 20px;
+      box-shadow: $shadow;
+
+      p {
+         margin-right: 20px;
+         z-index: 1;
+
+         span {
+            display: block;
+         }
+      }
+
+      .copy-btn-container {
+         text-align: center;
+         width: 20%;
+         cursor: pointer;
+         transition: all 0.2s ease;
+         opacity: 0.7;
+         margin-bottom: 5px;
+
+         &:hover,
+         &:focus {
+            color: white;
+            opacity: 1;
+            outline: none;
+         }
+
+         button {
+            background-color: transparent;
+            border: none;
+            color: $white;
+            font-size: 2rem;
+            cursor: pointer;
+
+            &:focus {
+               color: white;
+               opacity: 1;
+            }
+         }
+
+         span {
+            display: block;
+            font-size: 0.8rem;
+         }
+      }
+   }
+}

@@ -1,13 +1,14 @@
-import DemoBox from '../components/DemoBox';
+import DemoBox from '../components/DemoBox/DemoBox';
 import { CssProperty } from '../enums';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Select from '../components/Select';
-import Slider from '../components/Slider';
-import ColorPicker from '../components/ColorPicker';
+import Select from '../components/Select/Select';
+import Slider from '../components/Slider/Slider';
+import ColorPicker from '../components/ColorPicker/ColorPicker';
 import { hexToRgb } from '../utlis';
 import { Rgb } from '../interfaces';
-import CheckBox from '../components/CheckBox';
+import CheckBox from '../components/CheckBox/CheckBox';
+import ResetBtn from '../components/ResetBtn/ResetBtn';
 
 const borderStyles = [
    'solid',
@@ -155,19 +156,7 @@ const Border = () => {
                   setColorValue={setColor}
                   name="border-color"
                />
-               <button
-                  type="reset"
-                  onClick={handleReset}
-                  onMouseDown={(e) => {
-                     e.currentTarget.classList.add('active');
-                  }}
-                  onMouseUp={(e) => {
-                     e.currentTarget.classList.remove('active');
-                     console.log('up');
-                  }}
-               >
-                  Reset
-               </button>
+               <ResetBtn handleReset={handleReset} />
             </form>
             {isDetailed ? (
                <DemoBox

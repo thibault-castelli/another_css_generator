@@ -1,0 +1,41 @@
+// --- VARIABLES ---
+$black: #2f3e46;
+$dark-green: #354f52;
+$green: #52796f;
+$light-green: #84a98c;
+$white: #cad2c5;
+
+$shadow: 3px 3px 3px 0px #333333;
+$neon-shadow: 0 0 3px rgba(132, 169, 140, 0.5);
+
+// --- COLOR PICKER ---
+.color-container {
+   display: flex;
+   align-items: center;
+   margin-top: 20px;
+
+   input[type='color'] {
+      background-color: $black;
+      border: none;
+      border-radius: 5px;
+      width: 60px;
+      height: 45px;
+      padding: 5px 10px;
+      opacity: 0.8;
+      transition: all 0.2s ease;
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+         background-color: $light-green;
+         opacity: 1;
+         box-shadow: $neon-shadow;
+         padding: 3px 5px;
+         outline: none;
+      }
+   }
+
+   label {
+      margin-right: 20px;
+   }
+}

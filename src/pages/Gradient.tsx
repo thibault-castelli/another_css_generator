@@ -1,11 +1,13 @@
-import DemoBox from '../components/DemoBox';
+import DemoBox from '../components/DemoBox/DemoBox';
 import { CssProperty } from '../enums';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Select from '../components/Select';
-import ColorPicker from '../components/ColorPicker';
-import Slider from '../components/Slider';
-import CheckBox from '../components/CheckBox';
+import Select from '../components/Select/Select';
+import ColorPicker from '../components/ColorPicker/ColorPicker';
+import Slider from '../components/Slider/Slider';
+import CheckBox from '../components/CheckBox/CheckBox';
+import ResetBtn from '../components/ResetBtn/ResetBtn';
+import DoubleBtn from '../components/DoubleBtn/DoubleBtn';
 
 const positions = [
    'top left',
@@ -31,9 +33,6 @@ const Gradient = () => {
    const [isFarthestCorner, setIsFarthestCorner] = useState<boolean>(false);
    const [cssValue, setCssValue] = useState<string>('');
 
-   const btnLinearRef = useRef<HTMLButtonElement>(null);
-   const btnRadialRef = useRef<HTMLButtonElement>(null);
-
    const handleReset = () => {
       setPosition('center center');
       setAngle('90');
@@ -44,9 +43,6 @@ const Gradient = () => {
       setIsLinear(true);
       setIsElliptical(false);
       setIsFarthestCorner(false);
-
-      btnLinearRef.current?.classList.add('active');
-      btnRadialRef.current?.classList.remove('active');
    };
 
    useEffect(() => {
@@ -127,32 +123,13 @@ const Gradient = () => {
                      </motion.div>
                   )}
                </AnimatePresence>
-               <div className="btn-container">
-                  <button
-                     type="button"
-                     className="active"
-                     onClick={() => {
-                        setIsLinear(true);
-                        btnLinearRef.current?.classList.add('active');
-                        btnRadialRef.current?.classList.remove('active');
-                     }}
-                     ref={btnLinearRef}
-                  >
-                     Linear
-                  </button>
-                  <button
-                     type="button"
-                     onClick={() => {
-                        setIsLinear(false);
-                        btnLinearRef.current?.classList.remove('active');
-                        btnRadialRef.current?.classList.add('active');
-                     }}
-                     ref={btnRadialRef}
-                  >
-                     Radial
-                  </button>
-               </div>
 
+               <DoubleBtn
+                  nameBtn1="linear"
+                  nameBtn2="radial"
+                  setDoubleBtnValue={setIsLinear}
+                  doubleBtnValue={isLinear}
+               />
                <ColorPicker
                   colorValue={startColor}
                   setColorValue={setStartColor}
@@ -172,7 +149,6 @@ const Gradient = () => {
                   setSliderValue={setStopStartColor}
                   unit="%"
                />
-
                <Slider
                   maxSlider={100}
                   minSlider={0}
@@ -182,19 +158,7 @@ const Gradient = () => {
                   unit="%"
                />
 
-               <button
-                  type="reset"
-                  onClick={handleReset}
-                  onMouseDown={(e) => {
-                     e.currentTarget.classList.add('active');
-                  }}
-                  onMouseUp={(e) => {
-                     e.currentTarget.classList.remove('active');
-                     console.log('up');
-                  }}
-               >
-                  Reset
-               </button>
+               <ResetBtn handleReset={handleReset} />
             </form>
             <DemoBox cssProperty={CssProperty.gradient} cssValue={cssValue} />
          </section>

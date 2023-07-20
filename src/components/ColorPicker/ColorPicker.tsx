@@ -1,6 +1,11 @@
+import './colorpicker.css';
+
 interface Props {
+   /** State value for the color input */
    colorValue: string;
+   /** State function */
    setColorValue: React.Dispatch<React.SetStateAction<string>>;
+   /** Name of the color input label */
    name: string;
 }
 

@@ -1,0 +1,23 @@
+.container-input {
+  margin-top: 20px;
+}
+.container-input label {
+  margin-right: 20px;
+}
+.container-input input[type=text] {
+  background-color: #84a98c;
+  border: none;
+  padding: 10px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  color: #2f3e46;
+  opacity: 0.7;
+  transition: all 0.2s ease;
+}
+.container-input input[type=text]:hover, .container-input input[type=text]:focus {
+  opacity: 1;
+  box-shadow: 0 0 3px rgba(132, 169, 140, 0.5);
+}
+.container-input input[type=text]:focus {
+  outline: none;
+}/*# sourceMappingURL=inputtext.css.map */

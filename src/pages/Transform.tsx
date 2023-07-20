@@ -1,8 +1,9 @@
-import DemoBox from '../components/DemoBox';
-import Slider from '../components/Slider';
+import DemoBox from '../components/DemoBox/DemoBox';
+import Slider from '../components/Slider/Slider';
 import { CssProperty } from '../enums';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import ResetBtn from '../components/ResetBtn/ResetBtn';
 
 const Transform = () => {
    const [translateX, setTranslateX] = useState<string>('0');
@@ -98,19 +99,7 @@ const Transform = () => {
                   setSliderValue={setSkewY}
                   unit="deg"
                />
-               <button
-                  type="reset"
-                  onClick={handleReset}
-                  onMouseDown={(e) => {
-                     e.currentTarget.classList.add('active');
-                  }}
-                  onMouseUp={(e) => {
-                     e.currentTarget.classList.remove('active');
-                     console.log('up');
-                  }}
-               >
-                  Reset
-               </button>
+               <ResetBtn handleReset={handleReset} />
             </form>
             <DemoBox
                cssProperty={CssProperty.transform}

@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react';
 import { hexToRgb } from '../utlis';
 import { Rgb } from '../interfaces';
 import { CssProperty } from '../enums';
-import Slider from '../components/Slider';
-import CheckBox from '../components/CheckBox';
-import ColorPicker from '../components/ColorPicker';
-import DemoBox from '../components/DemoBox';
+import Slider from '../components/Slider/Slider';
+import CheckBox from '../components/CheckBox/CheckBox';
+import ColorPicker from '../components/ColorPicker/ColorPicker';
+import DemoBox from '../components/DemoBox/DemoBox';
 import { motion } from 'framer-motion';
+import ResetBtn from '../components/ResetBtn/ResetBtn';
 
 const BoxShadow = () => {
    const [offsetX, setOffsetX] = useState<string>('5');
@@ -108,19 +109,7 @@ const BoxShadow = () => {
                   setCheckBoxValue={setInset}
                   name="inset"
                />
-               <button
-                  type="reset"
-                  onClick={handleReset}
-                  onMouseDown={(e) => {
-                     e.currentTarget.classList.add('active');
-                  }}
-                  onMouseUp={(e) => {
-                     e.currentTarget.classList.remove('active');
-                     console.log('up');
-                  }}
-               >
-                  Reset
-               </button>
+               <ResetBtn handleReset={handleReset} />
             </form>
 
             <DemoBox cssProperty={CssProperty.boxShadow} cssValue={cssValue} />

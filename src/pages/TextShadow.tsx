@@ -1,11 +1,12 @@
-import DemoBox from '../components/DemoBox';
-import Slider from '../components/Slider';
+import DemoBox from '../components/DemoBox/DemoBox';
+import Slider from '../components/Slider/Slider';
 import { CssProperty } from '../enums';
 import { useState, useEffect } from 'react';
 import { hexToRgb } from '../utlis';
 import { Rgb } from '../interfaces';
-import ColorPicker from '../components/ColorPicker';
+import ColorPicker from '../components/ColorPicker/ColorPicker';
 import { motion } from 'framer-motion';
+import ResetBtn from '../components/ResetBtn/ResetBtn';
 
 const TextShadow = () => {
    const [offsetX, setOffsetX] = useState<string>('5');
@@ -84,19 +85,7 @@ const TextShadow = () => {
                   setColorValue={setColor}
                   name="color"
                />
-               <button
-                  type="reset"
-                  onClick={handleReset}
-                  onMouseDown={(e) => {
-                     e.currentTarget.classList.add('active');
-                  }}
-                  onMouseUp={(e) => {
-                     e.currentTarget.classList.remove('active');
-                     console.log('up');
-                  }}
-               >
-                  Reset
-               </button>
+               <ResetBtn handleReset={handleReset} />
             </form>
             <DemoBox
                cssProperty={CssProperty.textShadow}

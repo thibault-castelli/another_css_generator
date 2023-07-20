@@ -1,12 +1,20 @@
-import { isNumber } from '../utlis';
+import { isNumber } from '../../utlis';
+import './slider.css';
 
 interface Props {
+   /** Minimum value for the slider */
    minSlider: number;
+   /** Maximum value for the slider */
    maxSlider: number;
+   /** State value to keep track of the slider value */
    sliderValue: string;
+   /** State function */
    setSliderValue: React.Dispatch<React.SetStateAction<string>>;
+   /** Name of the slider label */
    name: string;
+   /** Step value of the slider */
    step?: string;
+   /** Unit of the slider (px, % ...) */
    unit?: string;
 }
 
