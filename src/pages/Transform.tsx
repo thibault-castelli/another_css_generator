@@ -66,6 +66,7 @@ const Transform = () => {
                   sliderValue={scaleX}
                   setSliderValue={setScaleX}
                   step="0.01"
+                  defaultValue="1"
                />
                <Slider
                   minSlider={0}
@@ -74,6 +75,7 @@ const Transform = () => {
                   sliderValue={scaleY}
                   setSliderValue={setScaleY}
                   step="0.01"
+                  defaultValue="1"
                />
                <Slider
                   minSlider={0}

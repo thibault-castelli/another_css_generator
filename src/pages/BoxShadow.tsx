@@ -98,6 +98,7 @@ const BoxShadow = () => {
                   sliderValue={opacity}
                   setSliderValue={setOpacity}
                   step="0.01"
+                  defaultValue="1"
                />
                <ColorPicker
                   name="color"

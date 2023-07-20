@@ -16,6 +16,8 @@ interface Props {
    step?: string;
    /** Unit of the slider (px, % ...) */
    unit?: string;
+   /** Default value of the slider */
+   defaultValue?: string;
 }
 
 const Slider = ({
@@ -26,6 +28,7 @@ const Slider = ({
    name,
    step = '1',
    unit = '',
+   defaultValue = '0',
 }: Props) => {
    const handleInputNumber = (e: React.ChangeEvent<HTMLInputElement>): void => {
       let value = e.currentTarget.value;
@@ -84,7 +87,7 @@ const Slider = ({
                e.currentTarget.blur();
             }}
             onDoubleClick={() => {
-               setSliderValue('0');
+               setSliderValue(defaultValue);
             }}
          />
       </div>

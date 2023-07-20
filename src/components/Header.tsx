@@ -26,7 +26,7 @@ const Header = () => {
       <header>
          <div className="container">
             <h1>
-               <NavLink to="/">css generator</NavLink>
+               <NavLink to="/">another css generator</NavLink>
             </h1>
 
             <motion.nav
@@ -60,7 +60,7 @@ const Header = () => {
                   id="nav-header"
                   variants={{
                      open: {
-                        height: '223px',
+                        height: '260px',
                         marginBottom: '20px',
                         padding: '10px',
                         scale: 1,
@@ -159,6 +159,16 @@ const Header = () => {
                         }}
                      >
                         hex-to-rgba
+                     </NavLink>
+                  </motion.li>
+                  <motion.li variants={itemVariants}>
+                     <NavLink
+                        to="/filter"
+                        onClick={(e) => {
+                           handleLinkClick(e);
+                        }}
+                     >
+                        filter
                      </NavLink>
                   </motion.li>
                </motion.ul>

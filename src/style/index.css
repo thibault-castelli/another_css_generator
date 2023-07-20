@@ -167,9 +167,6 @@ form {
 }
 
 @media screen and (max-width: 1000px) {
-  body {
-    font-size: 1.1rem;
-  }
   .col-2 {
     grid-template-columns: 1fr;
   }
@@ -185,7 +182,7 @@ form {
 }
 @media screen and (max-width: 600px) {
   body {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
   .container {
     width: 90%;

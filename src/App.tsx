@@ -9,6 +9,7 @@ import Error from './pages/Error';
 import Transform from './pages/Transform';
 import HexToRgba from './pages/HexToRgba';
 import Gradient from './pages/Gradient';
+import Filter from './pages/Filter';
 
 function App() {
    return (
@@ -24,6 +25,7 @@ function App() {
                   <Route path="/transform" element={<Transform />} />
                   <Route path="/hex-to-rgba" element={<HexToRgba />} />
                   <Route path="/gradient" element={<Gradient />} />
+                  <Route path="/filter" element={<Filter />} />
                   <Route path="*" element={<Error />} />
                </Route>
             </Routes>

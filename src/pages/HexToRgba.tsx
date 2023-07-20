@@ -61,6 +61,7 @@ const HexToRgba = () => {
                   sliderValue={opacity}
                   setSliderValue={setOpacity}
                   step="0.01"
+                  defaultValue="1"
                />
                <ColorPicker
                   colorValue={color}

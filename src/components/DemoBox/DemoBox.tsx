@@ -85,7 +85,7 @@ const DemoBox = ({ cssProperty, cssValue, text = '' }: Props) => {
          case CssProperty.transform:
             const tranforms = cssValue.split(';');
             setCssObj({
-               transform: `${tranforms[0]} ${tranforms[1]} ${tranforms[2]} ${tranforms[3]} ${tranforms[4]} ${tranforms[5]} ${tranforms[6]}`,
+               transform: tranforms.join(' '),
             });
 
             // Only add values to transform property if their value is different than zero
@@ -116,6 +116,44 @@ const DemoBox = ({ cssProperty, cssValue, text = '' }: Props) => {
 
             // Remove default style of the demo box
             demoBoxRef.current?.classList.remove('background-radial');
+            break;
+
+         case CssProperty.filter:
+            const filters: string[] = cssValue.split(';');
+            setCssObj({ filter: filters.join(' ') });
+
+            const filterPrompt: string[] = ['filter: '];
+            let noPrompt = true;
+
+            // Only prompt values that are different of 0
+            // (or different of 100 for brightness, contrast, opacity and saturate)
+            filters.forEach((filter) => {
+               const i = filter.indexOf('(') + 1;
+               if (
+                  !(filter[i] === '0') &&
+                  !(
+                     (filter.startsWith('brightness') ||
+                        filter.startsWith('contrast') ||
+                        filter.startsWith('opacity') ||
+                        filter.startsWith('saturate')) &&
+                     filter[i] === '1' &&
+                     filter[i + 1] === '0' &&
+                     filter[i + 2] === '0'
+                  )
+               ) {
+                  filterPrompt[0] += filter + ' ';
+                  noPrompt = false;
+               }
+            });
+
+            // Default prompt if every properties are default
+            if (noPrompt) {
+               filterPrompt[0] += 'bightness: 100%;';
+            } else {
+               filterPrompt[0] += ';';
+            }
+
+            setCssPrompt(filterPrompt);
             break;
       }
    }, [cssValue]);

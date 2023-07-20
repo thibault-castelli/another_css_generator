@@ -87,7 +87,6 @@ const Gradient = () => {
                         exit={{ height: 0, opacity: 0, scale: 0 }}
                         key="1"
                      >
-                        {' '}
                         <Slider
                            maxSlider={360}
                            minSlider={0}
@@ -156,6 +155,7 @@ const Gradient = () => {
                   sliderValue={stopEndColor}
                   setSliderValue={setStopEndColor}
                   unit="%"
+                  defaultValue="100"
                />
 
                <ResetBtn handleReset={handleReset} />

@@ -56,6 +56,7 @@
   border: none;
   color: #cad2c5;
   font-size: 2rem;
+  margin-top: 10px;
   cursor: pointer;
 }
 .demo-box-container .copy-container .copy-btn-container button:focus {

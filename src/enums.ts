@@ -10,4 +10,5 @@ export enum CssProperty {
    transform,
    color,
    gradient,
+   filter,
 }
