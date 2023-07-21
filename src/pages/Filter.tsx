@@ -4,7 +4,6 @@ import Slider from '../components/Slider/Slider';
 import { CssProperty } from '../enums';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import defaultImg from '../images/mountain.jpg';
 
 const Filter = () => {
    const [blur, setBlur] = useState<string>('0');

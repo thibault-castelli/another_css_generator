@@ -202,7 +202,7 @@ const DemoBox = ({ cssProperty, cssValue, text = '', image = '' }: Props) => {
                ref={demoBoxRef}
             >
                {text.length > 0 && <p>{text}</p>}
-               <button
+               {/* <button
                   type="button"
                   onMouseDown={(e) => {
                      e.currentTarget.classList.add('active');
@@ -215,7 +215,7 @@ const DemoBox = ({ cssProperty, cssValue, text = '', image = '' }: Props) => {
                   }}
                >
                   <AiFillTool />
-               </button>
+               </button> */}
             </div>
             <div className="copy-container">
                <p>

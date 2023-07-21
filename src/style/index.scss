@@ -91,10 +91,17 @@ h2 {
    color: $black;
    font-weight: 600;
    text-transform: uppercase;
+   margin-bottom: 40px;
 
    + p {
       text-align: center;
    }
+}
+h3 {
+   font-family: 'Hind', sans-serif;
+   color: $black;
+   font-weight: normal;
+   font-size: 1.8rem;
 }
 label,
 button {
@@ -136,6 +143,32 @@ body {
          font-weight: bolder;
          opacity: 1;
       }
+   }
+
+   video {
+      padding: 5px;
+      border-radius: 10px;
+      background-color: $black;
+      max-height: 200px;
+      max-width: 350px;
+      margin: 0 100px;
+   }
+}
+
+// --- HOME ---
+#home-section {
+   display: flex;
+   flex-direction: column;
+   flex-direction: center;
+   align-items: center;
+
+   div {
+      width: 100%;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 60px;
    }
 }
 

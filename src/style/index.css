@@ -77,9 +77,17 @@ h2 {
   color: #2f3e46;
   font-weight: 600;
   text-transform: uppercase;
+  margin-bottom: 40px;
 }
 h2 + p {
   text-align: center;
+}
+
+h3 {
+  font-family: "Hind", sans-serif;
+  color: #2f3e46;
+  font-weight: normal;
+  font-size: 1.8rem;
 }
 
 label,
@@ -118,6 +126,29 @@ body a:hover, body a:focus {
 body a.active {
   font-weight: bolder;
   opacity: 1;
+}
+body video {
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #2f3e46;
+  max-height: 200px;
+  max-width: 350px;
+  margin: 0 100px;
+}
+
+#home-section {
+  display: flex;
+  flex-direction: column;
+  flex-direction: center;
+  align-items: center;
+}
+#home-section div {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px;
 }
 
 header {
