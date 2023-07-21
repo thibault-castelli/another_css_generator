@@ -9,7 +9,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: -1;
+  position: relative;
+  background-position: center;
+  background-size: cover;
 }
 .demo-box-container .demo-box.background-radial {
   background: #84a98c;
@@ -19,6 +21,30 @@
   color: #2f3e46;
   font-size: 3rem;
   padding: 0 20px;
+}
+.demo-box-container .demo-box button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 10px;
+  margin-right: 10px;
+  background-color: #cad2c5;
+  color: #2f3e46;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px 0px #333333;
+  font-size: 1.5rem;
+  opacity: 0.7;
+  border: 5px outset #2f3e46;
+  transition: all 0.2s ease;
+}
+.demo-box-container .demo-box button:hover {
+  background-color: white;
+  color: #333;
+  opacity: 1;
+}
+.demo-box-container .demo-box button.active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
 }
 .demo-box-container .copy-container {
   display: flex;

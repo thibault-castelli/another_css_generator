@@ -4,6 +4,7 @@ import Slider from '../components/Slider/Slider';
 import { CssProperty } from '../enums';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import defaultImg from '../images/mountain.jpg';
 
 const Filter = () => {
    const [blur, setBlur] = useState<string>('0');
@@ -58,12 +59,13 @@ const Filter = () => {
          <section className="col-2 container">
             <form>
                <Slider
-                  maxSlider={30}
+                  maxSlider={20}
                   minSlider={0}
                   name="blur"
                   sliderValue={blur}
                   setSliderValue={setBlur}
                   unit="px"
+                  step="0.5"
                />
                <Slider
                   maxSlider={200}
@@ -136,7 +138,11 @@ const Filter = () => {
 
                <ResetBtn handleReset={handleReset} />
             </form>
-            <DemoBox cssProperty={CssProperty.filter} cssValue={cssValue} />
+            <DemoBox
+               cssProperty={CssProperty.filter}
+               cssValue={cssValue}
+               image={'url(/mountain.jpg)'}
+            />
          </section>
       </motion.main>
    );
