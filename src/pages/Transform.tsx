@@ -4,12 +4,14 @@ import { CssProperty } from '../enums';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import ResetBtn from '../components/ResetBtn/ResetBtn';
+import CheckBox from '../components/CheckBox/CheckBox';
 
 const Transform = () => {
    const [translateX, setTranslateX] = useState<string>('0');
    const [translateY, setTranslateY] = useState<string>('0');
    const [scaleX, setScaleX] = useState<string>('1');
    const [scaleY, setScaleY] = useState<string>('1');
+   const [isScaleLinked, setIsScaleLinked] = useState<boolean>(false);
    const [rotate, setRotate] = useState<string>('0');
    const [skewX, setSkewX] = useState<string>('0');
    const [skewY, setSkewY] = useState<string>('0');
@@ -23,6 +25,7 @@ const Transform = () => {
       setRotate('0');
       setSkewX('0');
       setSkewY('0');
+      setIsScaleLinked(false);
    };
 
    useEffect(() => {
@@ -30,6 +33,21 @@ const Transform = () => {
          `translateX(${translateX}px);translateY(${translateY}px);scaleX(${scaleX});scaleY(${scaleY});rotate(${rotate}deg);skewX(${skewX}deg);skewY(${skewY}deg)`
       );
    }, [translateX, translateY, scaleX, scaleY, rotate, skewX, skewY]);
+
+   // Link scales properties
+   useEffect(() => {
+      if (isScaleLinked) {
+         setScaleY(scaleX);
+      }
+   }, [scaleX]);
+   useEffect(() => {
+      if (isScaleLinked) {
+         setScaleX(scaleY);
+      }
+   }, [scaleY]);
+   useEffect(() => {
+      setScaleY(scaleX);
+   }, [isScaleLinked]);
 
    return (
       <motion.main
@@ -100,6 +118,11 @@ const Transform = () => {
                   sliderValue={skewY}
                   setSliderValue={setSkewY}
                   unit="deg"
+               />
+               <CheckBox
+                  name="link-scales"
+                  checkBoxValue={isScaleLinked}
+                  setCheckBoxValue={setIsScaleLinked}
                />
                <ResetBtn handleReset={handleReset} />
             </form>
