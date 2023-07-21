@@ -97,6 +97,7 @@ const Header = () => {
                         onClick={(e) => {
                            handleLinkClick(e);
                         }}
+                        className="underline-link"
                      >
                         box-shadow
                      </NavLink>
@@ -107,6 +108,7 @@ const Header = () => {
                         onClick={(e) => {
                            handleLinkClick(e);
                         }}
+                        className="underline-link"
                      >
                         text-shadow
                      </NavLink>
@@ -117,6 +119,7 @@ const Header = () => {
                         onClick={(e) => {
                            handleLinkClick(e);
                         }}
+                        className="underline-link"
                      >
                         border
                      </NavLink>
@@ -127,6 +130,7 @@ const Header = () => {
                         onClick={(e) => {
                            handleLinkClick(e);
                         }}
+                        className="underline-link"
                      >
                         border-radius
                      </NavLink>
@@ -137,6 +141,7 @@ const Header = () => {
                         onClick={(e) => {
                            handleLinkClick(e);
                         }}
+                        className="underline-link"
                      >
                         gradient
                      </NavLink>
@@ -147,6 +152,7 @@ const Header = () => {
                         onClick={(e) => {
                            handleLinkClick(e);
                         }}
+                        className="underline-link"
                      >
                         transform
                      </NavLink>
@@ -157,6 +163,7 @@ const Header = () => {
                         onClick={(e) => {
                            handleLinkClick(e);
                         }}
+                        className="underline-link"
                      >
                         hex-to-rgba
                      </NavLink>
@@ -167,6 +174,7 @@ const Header = () => {
                         onClick={(e) => {
                            handleLinkClick(e);
                         }}
+                        className="underline-link"
                      >
                         filter
                      </NavLink>
