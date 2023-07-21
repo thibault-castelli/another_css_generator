@@ -42,6 +42,26 @@
   transform-origin: bottom left;
 }
 
+.title-link {
+  font-size: 3rem;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 10px 40px;
+  color: #2f3e46;
+  transition: all 0.2s ease;
+}
+.title-link:hover {
+  color: #333;
+  font-size: 3.1rem;
+}
+
+.wave {
+  position: absolute;
+  bottom: 140px;
+  left: 0;
+  z-index: -1;
+}
+
 h1,
 h2,
 h3,
@@ -81,6 +101,7 @@ body {
 }
 body main {
   min-height: 70vh;
+  position: relative;
 }
 body a {
   color: inherit;
@@ -156,6 +177,7 @@ footer {
   padding: 1px 0;
   color: #cad2c5;
   text-align: center;
+  position: relative;
 }
 footer p {
   margin-bottom: 0;

@@ -55,6 +55,26 @@ $neon-shadow: 0 0 3px rgba(132, 169, 140, 0.5);
       transform-origin: bottom left;
    }
 }
+.title-link {
+   font-size: 3rem;
+   display: inline-block;
+   margin: 0 auto;
+   padding: 10px 40px;
+   color: $black;
+   transition: all 0.2s ease;
+
+   &:hover {
+      color: #333;
+      font-size: 3.1rem;
+   }
+}
+
+.wave {
+   position: absolute;
+   bottom: 140px;
+   left: 0;
+   z-index: -1;
+}
 
 // --- TITLES ---
 h1,
@@ -95,6 +115,7 @@ body {
 
    main {
       min-height: 70vh;
+      position: relative;
    }
 
    a {
@@ -183,6 +204,7 @@ footer {
    padding: 1px 0;
    color: $white;
    text-align: center;
+   position: relative;
 
    p {
       margin-bottom: 0;
