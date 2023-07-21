@@ -32,6 +32,30 @@ $neon-shadow: 0 0 3px rgba(132, 169, 140, 0.5);
    grid-template-columns: 1fr 1fr;
 }
 
+.underline-link {
+   position: relative;
+   padding: 0 10px;
+
+   &::after {
+      content: '';
+      position: absolute;
+      width: 90%;
+      height: 1px;
+      bottom: 0;
+      left: 5%;
+      background-color: $white;
+      transform-origin: bottom right;
+      transition: transform 0.2s ease-out;
+      transform: scaleX(0);
+   }
+
+   &:hover::after,
+   &:focus::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+   }
+}
+
 // --- TITLES ---
 h1,
 h2,
@@ -66,21 +90,11 @@ body {
    font-family: 'Hind', sans-serif;
    font-size: 1.2rem;
    background-color: $white;
-   min-height: 100vh;
    margin: 0;
    overflow-x: hidden;
-}
 
-// --- HEADER ---
-header {
-   background-color: $black;
-   margin-bottom: 20px;
-   color: $white;
-
-   > div {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
+   main {
+      min-height: 70vh;
    }
 
    a {
@@ -101,6 +115,19 @@ header {
          font-weight: bolder;
          opacity: 1;
       }
+   }
+}
+
+// --- HEADER ---
+header {
+   background-color: $black;
+   margin-bottom: 20px;
+   color: $white;
+
+   > div {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
    }
 }
 
@@ -145,29 +172,6 @@ nav {
 
       li {
          display: inline-block;
-         a {
-            position: relative;
-            padding: 0 10px;
-
-            &::after {
-               content: '';
-               position: absolute;
-               width: 90%;
-               height: 1px;
-               bottom: 0;
-               left: 5%;
-               background-color: $white;
-               transform-origin: bottom right;
-               transition: transform 0.2s ease-out;
-               transform: scaleX(0);
-            }
-
-            &:hover::after,
-            &:focus::after {
-               transform: scaleX(1);
-               transform-origin: bottom left;
-            }
-         }
       }
    }
 }
@@ -178,9 +182,19 @@ footer {
    margin-top: 20px;
    padding: 1px 0;
    color: $white;
+   text-align: center;
 
-   h2 {
-      color: inherit;
+   p {
+      margin-bottom: 0;
+
+      a {
+         font-size: 1.4rem;
+      }
+   }
+
+   p + a {
+      margin-top: 10px;
+      font-size: 3rem;
    }
 }
 
