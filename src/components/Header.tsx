@@ -1,7 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import { RxHamburgerMenu } from 'react-icons/rx';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { navVariant, linkVariant } from '../variants';
 
 const Header = () => {
    const [isHamburgerOpen, setIsHamburgerOpen] = useState<boolean>(false);
@@ -11,15 +12,6 @@ const Header = () => {
    ) => {
       e.currentTarget.blur();
       setIsHamburgerOpen(false);
-   };
-
-   const itemVariants: Variants = {
-      open: {
-         opacity: 1,
-         y: 0,
-         transition: { type: 'spring', stiffness: 300, damping: 24 },
-      },
-      closed: { opacity: 0, y: 90, transition: { duration: 0.1 } },
    };
 
    return (
@@ -33,6 +25,7 @@ const Header = () => {
                initial={false}
                animate={isHamburgerOpen ? 'open' : 'closed'}
                onBlur={(e) => {
+                  // Close nav if clicking outside the nav
                   if (!e.currentTarget.contains(e.relatedTarget)) {
                      setIsHamburgerOpen(false);
                   }
@@ -56,42 +49,8 @@ const Header = () => {
                   <RxHamburgerMenu />
                </motion.button>
 
-               <motion.ul
-                  id="nav-header"
-                  variants={{
-                     open: {
-                        height: '260px',
-                        marginBottom: '20px',
-                        padding: '10px',
-                        scale: 1,
-                        y: 0,
-                        x: 0,
-                        opacity: 1,
-                        transition: {
-                           type: 'spring',
-                           bounce: 0,
-                           duration: 0.5,
-                           delayChildren: 0.1,
-                           staggerChildren: 0.03,
-                        },
-                     },
-                     closed: {
-                        height: 0,
-                        marginBottom: '0',
-                        padding: '0',
-                        scale: 0,
-                        y: -40,
-                        x: 170,
-                        opacity: 0.5,
-                        transition: {
-                           type: 'spring',
-                           bounce: 0,
-                           duration: 0.5,
-                        },
-                     },
-                  }}
-               >
-                  <motion.li variants={itemVariants}>
+               <motion.ul id="nav-header" variants={navVariant}>
+                  <motion.li variants={linkVariant}>
                      <NavLink
                         to="/box-shadow"
                         onClick={(e) => {
@@ -102,7 +61,7 @@ const Header = () => {
                         box-shadow
                      </NavLink>
                   </motion.li>
-                  <motion.li variants={itemVariants}>
+                  <motion.li variants={linkVariant}>
                      <NavLink
                         to="/text-shadow"
                         onClick={(e) => {
@@ -113,7 +72,7 @@ const Header = () => {
                         text-shadow
                      </NavLink>
                   </motion.li>
-                  <motion.li variants={itemVariants}>
+                  <motion.li variants={linkVariant}>
                      <NavLink
                         to="/border"
                         onClick={(e) => {
@@ -124,7 +83,7 @@ const Header = () => {
                         border
                      </NavLink>
                   </motion.li>
-                  <motion.li variants={itemVariants}>
+                  <motion.li variants={linkVariant}>
                      <NavLink
                         to="/border-radius"
                         onClick={(e) => {
@@ -135,7 +94,7 @@ const Header = () => {
                         border-radius
                      </NavLink>
                   </motion.li>
-                  <motion.li variants={itemVariants}>
+                  <motion.li variants={linkVariant}>
                      <NavLink
                         to="/gradient"
                         onClick={(e) => {
@@ -146,7 +105,7 @@ const Header = () => {
                         gradient
                      </NavLink>
                   </motion.li>
-                  <motion.li variants={itemVariants}>
+                  <motion.li variants={linkVariant}>
                      <NavLink
                         to="/transform"
                         onClick={(e) => {
@@ -157,7 +116,7 @@ const Header = () => {
                         transform
                      </NavLink>
                   </motion.li>
-                  <motion.li variants={itemVariants}>
+                  <motion.li variants={linkVariant}>
                      <NavLink
                         to="/hex-to-rgba"
                         onClick={(e) => {
@@ -168,7 +127,7 @@ const Header = () => {
                         hex-to-rgba
                      </NavLink>
                   </motion.li>
-                  <motion.li variants={itemVariants}>
+                  <motion.li variants={linkVariant}>
                      <NavLink
                         to="/filter"
                         onClick={(e) => {

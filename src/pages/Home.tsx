@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import slidersVideo from '../videos/sliders.mp4';
 import boxVideo from '../videos/box.mp4';
 import copyVideo from '../videos/copy.mp4';
+import { GoSmiley } from 'react-icons/go';
 
 const Home = () => {
    return (
@@ -17,20 +18,22 @@ const Home = () => {
          <section className="container" id="home-section">
             <h2>Welcome to another css generator</h2>
 
-            <div className="col-2">
+            <div>
                <h3>Move sliders...</h3>
                <video autoPlay loop muted>
                   <source src={slidersVideo} type="video/mp4"></source>
                </video>
             </div>
-            <div className="col-2">
+            <div>
                <video autoPlay loop muted>
                   <source src={boxVideo} type="video/mp4"></source>
                </video>
                <h3>and get instant results!</h3>
             </div>
-            <div className="col-2">
-               <h3>As simple as a copy-paste</h3>
+            <div>
+               <h3>
+                  As simple as a copy-paste <GoSmiley />
+               </h3>
                <video autoPlay loop muted>
                   <source src={copyVideo} type="video/mp4"></source>
                </video>

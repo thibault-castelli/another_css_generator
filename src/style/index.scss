@@ -32,21 +32,17 @@ $neon-shadow: 0 0 3px rgba(132, 169, 140, 0.5);
    grid-template-columns: 1fr 1fr;
 }
 
-.underline-link {
+%underline-anim {
    position: relative;
-   padding: 0 10px;
 
-   &::after {
+   &:after {
       content: '';
       position: absolute;
-      width: 90%;
-      height: 1px;
-      bottom: 0;
-      left: 5%;
-      background-color: $white;
       transform-origin: bottom right;
       transition: transform 0.2s ease-out;
       transform: scaleX(0);
+      left: 5%;
+      width: 90%;
    }
 
    &:hover::after,
@@ -55,7 +51,19 @@ $neon-shadow: 0 0 3px rgba(132, 169, 140, 0.5);
       transform-origin: bottom left;
    }
 }
+.underline-link {
+   @extend %underline-anim;
+   padding: 0 10px;
+
+   &::after {
+      height: 1px;
+      bottom: 0;
+      background-color: $white;
+   }
+}
 .title-link {
+   @extend %underline-anim;
+
    font-size: 3rem;
    display: inline-block;
    margin: 0 auto;
@@ -65,7 +73,12 @@ $neon-shadow: 0 0 3px rgba(132, 169, 140, 0.5);
 
    &:hover {
       color: #333;
-      font-size: 3.1rem;
+      // font-size: 3.1rem;
+   }
+   &::after {
+      height: 2px;
+      bottom: 20px;
+      background-color: $black;
    }
 }
 
@@ -143,32 +156,6 @@ body {
          font-weight: bolder;
          opacity: 1;
       }
-   }
-
-   video {
-      padding: 5px;
-      border-radius: 10px;
-      background-color: $black;
-      max-height: 200px;
-      max-width: 350px;
-      margin: 0 100px;
-   }
-}
-
-// --- HOME ---
-#home-section {
-   display: flex;
-   flex-direction: column;
-   flex-direction: center;
-   align-items: center;
-
-   div {
-      width: 100%;
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 60px;
    }
 }
 
@@ -253,6 +240,36 @@ footer {
    }
 }
 
+/// --- SECTIONS ---
+#home-section {
+   display: flex;
+   flex-direction: column;
+   flex-direction: center;
+   align-items: center;
+
+   div {
+      width: 100%;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 60px;
+
+      video {
+         padding: 5px;
+         border-radius: 10px;
+         background-color: $black;
+         max-height: 200px;
+         max-width: 350px;
+         margin: 0 100px;
+      }
+   }
+}
+
+#error-section {
+   text-align: center;
+}
+
 // --- FORM ---
 form {
    border-radius: 10px;
@@ -278,6 +295,16 @@ form {
 
       .copy-container {
          margin: 70px auto 0 auto;
+      }
+   }
+
+   #home-section {
+      div {
+         flex-direction: column;
+
+         &:nth-child(3) {
+            flex-direction: column-reverse;
+         }
       }
    }
 }

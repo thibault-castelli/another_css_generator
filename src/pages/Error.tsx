@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 const Error = () => {
    return (
       <main>
-         <section className="container">
+         <section className="container" id="error-section">
             <h2>error 404</h2>
-            <p>Page not found</p>
+            <h3>Page not found</h3>
             <Link to="/" className="underline-link title-link">
                Get back home
             </Link>

@@ -21,25 +21,30 @@
   grid-template-columns: 1fr 1fr;
 }
 
-.underline-link {
+.title-link, .underline-link {
   position: relative;
-  padding: 0 10px;
 }
-.underline-link::after {
+.title-link:after, .underline-link:after {
   content: "";
   position: absolute;
-  width: 90%;
-  height: 1px;
-  bottom: 0;
-  left: 5%;
-  background-color: #cad2c5;
   transform-origin: bottom right;
   transition: transform 0.2s ease-out;
   transform: scaleX(0);
+  left: 5%;
+  width: 90%;
 }
-.underline-link:hover::after, .underline-link:focus::after {
+.title-link:hover::after, .underline-link:hover::after, .title-link:focus::after, .underline-link:focus::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+.underline-link {
+  padding: 0 10px;
+}
+.underline-link::after {
+  height: 1px;
+  bottom: 0;
+  background-color: #cad2c5;
 }
 
 .title-link {
@@ -52,7 +57,11 @@
 }
 .title-link:hover {
   color: #333;
-  font-size: 3.1rem;
+}
+.title-link::after {
+  height: 2px;
+  bottom: 20px;
+  background-color: #2f3e46;
 }
 
 .wave {
@@ -127,29 +136,6 @@ body a.active {
   font-weight: bolder;
   opacity: 1;
 }
-body video {
-  padding: 5px;
-  border-radius: 10px;
-  background-color: #2f3e46;
-  max-height: 200px;
-  max-width: 350px;
-  margin: 0 100px;
-}
-
-#home-section {
-  display: flex;
-  flex-direction: column;
-  flex-direction: center;
-  align-items: center;
-}
-#home-section div {
-  width: 100%;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 60px;
-}
 
 header {
   background-color: #2f3e46;
@@ -221,6 +207,33 @@ footer p + a {
   font-size: 3rem;
 }
 
+#home-section {
+  display: flex;
+  flex-direction: column;
+  flex-direction: center;
+  align-items: center;
+}
+#home-section div {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+#home-section div video {
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #2f3e46;
+  max-height: 200px;
+  max-width: 350px;
+  margin: 0 100px;
+}
+
+#error-section {
+  text-align: center;
+}
+
 form {
   border-radius: 10px;
   padding: 20px;
@@ -242,6 +255,12 @@ form {
   }
   .demo-box-container .copy-container {
     margin: 70px auto 0 auto;
+  }
+  #home-section div {
+    flex-direction: column;
+  }
+  #home-section div:nth-child(3) {
+    flex-direction: column-reverse;
   }
 }
 @media screen and (max-width: 600px) {
