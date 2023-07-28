@@ -73,7 +73,6 @@ $neon-shadow: 0 0 3px rgba(132, 169, 140, 0.5);
 
    &:hover {
       color: #333;
-      // font-size: 3.1rem;
    }
    &::after {
       height: 2px;
@@ -164,7 +163,7 @@ header {
    background-color: $black;
    margin-bottom: 20px;
    color: $white;
-   overflow-x: hidden;
+   overflow: hidden;
 
    > div {
       display: flex;
