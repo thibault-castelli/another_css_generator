@@ -42,6 +42,10 @@ const HexToRgba = () => {
       setColorTemp(color);
    }, [color]);
 
+   useEffect(() => {
+      document.title = 'Hex to RGBA - Another CSS Generator';
+   }, []);
+
    return (
       <motion.main
          initial={{ opacity: 0.5, x: -500 }}

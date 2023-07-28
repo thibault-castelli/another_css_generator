@@ -67,6 +67,10 @@ const Gradient = () => {
       isFarthestCorner,
    ]);
 
+   useEffect(() => {
+      document.title = 'Gradient - Another CSS Generator';
+   }, []);
+
    return (
       <motion.main
          initial={{ opacity: 0.5, x: -500 }}

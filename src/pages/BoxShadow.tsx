@@ -43,6 +43,10 @@ const BoxShadow = () => {
       colorRgb = hexToRgb(color);
    }, [color]);
 
+   useEffect(() => {
+      document.title = 'Box Shadow - Another CSS Generator';
+   }, []);
+
    return (
       <motion.main
          initial={{ opacity: 0.5, x: -500 }}

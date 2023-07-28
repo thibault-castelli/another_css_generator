@@ -49,6 +49,10 @@ const Transform = () => {
       setScaleY(scaleX);
    }, [isScaleLinked]);
 
+   useEffect(() => {
+      document.title = 'Transform - Another CSS Generator';
+   }, []);
+
    return (
       <motion.main
          initial={{ opacity: 0.5, x: -500 }}

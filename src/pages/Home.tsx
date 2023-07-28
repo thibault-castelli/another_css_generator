@@ -4,8 +4,13 @@ import slidersVideo from '../videos/sliders.mp4';
 import boxVideo from '../videos/box.mp4';
 import copyVideo from '../videos/copy.mp4';
 import { GoSmiley } from 'react-icons/go';
+import { useEffect } from 'react';
 
 const Home = () => {
+   useEffect(() => {
+      document.title = 'Another CSS Generator';
+   }, []);
+
    return (
       <motion.main
          initial={{ opacity: 0.5, x: -500 }}

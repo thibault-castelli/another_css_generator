@@ -43,6 +43,10 @@ const BorderRadius = () => {
       all,
    ]);
 
+   useEffect(() => {
+      document.title = 'Border Radius - Another CSS Generator';
+   }, []);
+
    return (
       <motion.main
          initial={{ opacity: 0.5, x: -500 }}

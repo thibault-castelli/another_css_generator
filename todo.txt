@@ -1,6 +1,3 @@
 - Faire la page d'accueil
 - Ajouter bouton de modification de démo box (couleur de fond et texte à l'intérieur) ?
 - Faire une page color picker ?
-
-- Checker l'accéssibilité
-- Clean le code

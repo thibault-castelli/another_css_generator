@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const Error = () => {
+   useEffect(() => {
+      document.title = 'Error - Another CSS Generator';
+   }, []);
+
    return (
       <main>
          <section className="container" id="error-section">

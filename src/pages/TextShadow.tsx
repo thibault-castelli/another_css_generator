@@ -36,6 +36,10 @@ const TextShadow = () => {
       colorRgb = hexToRgb(color);
    }, [color]);
 
+   useEffect(() => {
+      document.title = 'Text Shadow - Another CSS Generator';
+   }, []);
+
    return (
       <motion.main
          initial={{ opacity: 0.5, x: -500 }}
