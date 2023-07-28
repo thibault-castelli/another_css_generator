@@ -43,7 +43,7 @@ const Header = () => {
                   aria-controls="nav-header"
                   variants={{
                      open: { rotate: -90, margin: '10px 0 10px auto' },
-                     closed: { rotate: 0 },
+                     closed: { rotate: 0, margin: '10px 0 10px auto' },
                   }}
                   aria-label="menu-button"
                >
