@@ -79,7 +79,7 @@ const Border = () => {
       >
          <h2>border</h2>
          <section className="container col-2">
-            <form>
+            <form style={{ minHeight: '660px' }}>
                <AnimatePresence>
                   {isDetailed ? (
                      <motion.div

@@ -78,7 +78,7 @@ const Gradient = () => {
       >
          <h2>gradient</h2>
          <section className="container col-2">
-            <form>
+            <form style={{ minHeight: '705px' }}>
                <AnimatePresence>
                   {isLinear ? (
                      <motion.div

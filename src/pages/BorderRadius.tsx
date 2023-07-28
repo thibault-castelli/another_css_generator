@@ -54,7 +54,7 @@ const BorderRadius = () => {
       >
          <h2>border-radius</h2>
          <section className="container col-2">
-            <form>
+            <form style={{ minHeight: '590px' }}>
                <AnimatePresence>
                   {isDetailBorder ? (
                      <motion.div
