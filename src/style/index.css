@@ -141,6 +141,7 @@ header {
   background-color: #2f3e46;
   margin-bottom: 20px;
   color: #cad2c5;
+  overflow-x: hidden;
 }
 header > div {
   display: flex;
