@@ -45,6 +45,7 @@ const Header = () => {
                      open: { rotate: -90, margin: '10px 0 10px auto' },
                      closed: { rotate: 0 },
                   }}
+                  aria-label="menu-button"
                >
                   <RxHamburgerMenu />
                </motion.button>

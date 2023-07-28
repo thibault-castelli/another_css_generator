@@ -20,21 +20,33 @@ const Home = () => {
 
             <div>
                <h3>Move sliders...</h3>
-               <video autoPlay loop muted>
+               <video autoPlay loop muted tabIndex={-1} title="sliders moving">
                   <source src={slidersVideo} type="video/mp4"></source>
                </video>
             </div>
             <div>
-               <video autoPlay loop muted>
+               <video
+                  autoPlay
+                  loop
+                  muted
+                  tabIndex={-1}
+                  title="box shadow changing"
+               >
                   <source src={boxVideo} type="video/mp4"></source>
                </video>
                <h3>and get instant results!</h3>
             </div>
             <div>
                <h3>
-                  As simple as a copy-paste <GoSmiley />
+                  As simple as a copy-paste <GoSmiley aria-label="smiley" />
                </h3>
-               <video autoPlay loop muted>
+               <video
+                  autoPlay
+                  loop
+                  muted
+                  tabIndex={-1}
+                  title="clicking copy link"
+               >
                   <source src={copyVideo} type="video/mp4"></source>
                </video>
             </div>

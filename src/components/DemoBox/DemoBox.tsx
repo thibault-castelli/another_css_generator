@@ -4,10 +4,10 @@ import {
    BsFillClipboard2CheckFill,
    BsFillClipboard2Fill,
 } from 'react-icons/bs';
-import { AiFillTool } from 'react-icons/ai';
+// import { AiFillTool } from 'react-icons/ai';
 import './demobox.css';
-import Modal from '../Modal/Modal';
-import SettingsDemoBox from '../SettingsDemoBox/SettingsDemoBox';
+// import Modal from '../Modal/Modal';
+// import SettingsDemoBox from '../SettingsDemoBox/SettingsDemoBox';
 
 interface Props {
    /** Css property to apply to the demo box */
@@ -28,7 +28,7 @@ const DemoBox = ({ cssProperty, cssValue, text = '', image = '' }: Props) => {
    const [isCopied, setIsCopied] = useState<boolean>(false);
 
    // States for settings
-   const [isSettingsOpen, setIsSettingsOpen] = useState<boolean>(false);
+   // const [isSettingsOpen, setIsSettingsOpen] = useState<boolean>(false);
    // const [image, setImage] = useState<string>('');
 
    const demoBoxRef = useRef<HTMLDivElement>(null);
@@ -134,11 +134,14 @@ const DemoBox = ({ cssProperty, cssValue, text = '', image = '' }: Props) => {
             break;
 
          case CssProperty.gradient:
-            setCssObj({ background: cssValue });
-            setCssPrompt(['background: ' + cssValue + ';']);
-
             // Remove default style of the demo box
             demoBoxRef.current?.classList.remove('background-radial');
+
+            setCssObj({
+               backgroundImage: 'none',
+               background: cssValue,
+            });
+            setCssPrompt(['background: ' + cssValue + ';']);
             break;
 
          case CssProperty.filter:
@@ -230,11 +233,11 @@ const DemoBox = ({ cssProperty, cssValue, text = '', image = '' }: Props) => {
                      setIsCopied(true);
                   }}
                >
-                  <button type="button">
+                  <button type="button" aria-label="copy-button">
                      {isCopied ? (
-                        <BsFillClipboard2CheckFill />
+                        <BsFillClipboard2CheckFill aria-label="copy-symbol" />
                      ) : (
-                        <BsFillClipboard2Fill />
+                        <BsFillClipboard2Fill aria-label="copied-symbol" />
                      )}
                   </button>
                   <span>{isCopied ? 'copied' : 'click to copy'}</span>

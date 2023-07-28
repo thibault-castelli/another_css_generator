@@ -20,13 +20,14 @@ const Footer = () => {
                rel="noopener noreferrer"
                target="_blank"
             >
-               <AiFillGithub />
+               <AiFillGithub aria-label="GitHub logo" />
             </a>
          </div>
          <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1440 320"
             className="wave"
+            aria-label="green wave"
          >
             <path
                fill="#84a98c"
