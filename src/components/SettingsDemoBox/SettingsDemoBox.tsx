@@ -1,12 +1,12 @@
-import ColorPicker from '../ColorPicker/ColorPicker';
+// import ColorPicker from '../ColorPicker/ColorPicker';
 import './settingsdemobox.css';
 
-interface Props {
-   backgroundColor: string;
-   setBackgroundColor: React.Dispatch<React.SetStateAction<string>>;
-   image: string;
-   setImage: React.Dispatch<React.SetStateAction<string>>;
-}
+// interface Props {
+//    backgroundColor: string;
+//    setBackgroundColor: React.Dispatch<React.SetStateAction<string>>;
+//    image: string;
+//    setImage: React.Dispatch<React.SetStateAction<string>>;
+// }
 
 const SettingsDemoBox = () => {
    return (
